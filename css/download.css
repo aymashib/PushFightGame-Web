@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    font-family: "Courier New";
+    color: black;
+
+}
+
+/*menubar start*/
+
+.container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    padding-bottom: 30px;
+    border-bottom: solid;
+    border-width: 1.5px;
+}
+input{
+    display: none;
+}
+
+a:nth-child(5){
+    border: solid;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    padding: 6px 6px;
+    margin: 0 10px;
+    border-radius: 7px;
+}
+a:hover{
+    background-color: rosybrown;
+}
+
+nav {
+    padding: 16px 0 0;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    border-radius: 7px;
+}
+
+/* Styles for hamburger menu */
+.menu-icon {
+    display: none; /* Hide by default */
+}
+
+/* Media query for screen size smaller than a certain width */
+@media screen and (max-width: 690px) {
+    .container{
+        height: 60px;
+    }
+    nav{
+        display: none;
+    }
+
+    .menu-icon {
+        display: flex;
+        cursor: pointer;
+        width: 20px;
+        padding-left: 15px;
+    }
+
+    a:hover{
+        background-color: white;
+    }
+
+    #menu-toggle {
+        display: none; /* Hide checkbox */
+    }
+
+    /* Styles for the dropdown menu */
+    #menu-toggle:checked + label + nav {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        flex-direction: column;
+    }
+
+    #menu-toggle:checked + label + nav a {
+        margin: 5px 0;
+        display: inline-flex;
+    }
+}
+/*menubar end*/
+
+section {
+    padding: 130px 10px;
+}
+
+
+@keyframes flash {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+}
+
+
+footer div{
+    bottom: 0;
+    text-align: center;
+}
+
+footer p{
+    padding: 20px 10px;
+    font-size: 12px;
+    animation: flash 2s infinite;
+    bottom: 0;
+}
