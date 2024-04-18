@@ -1,131 +1,71 @@
-*{
-    margin: 0px;
-    font-family: "Courier New";
+/* Global styles */
+* {
+  margin: 0px; /* Remove default margins */
+  font-family: "Courier New"; /* Set base font family */
+}
+section {
+  margin-bottom: 10%;
 }
 
-/*menubar start*/
-
-.container{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    background-color: white;
-    padding-bottom: 30px;
-    border-bottom: solid;
-    border-width: 1.5px;
-}
-input{
-    display: none;
+/* Introduction section styles */
+.logo_image {
+  width: 100%; /* Fill container width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Scale to fill container, potentially cropping */
+  object-position: center; /* Center image within container */
 }
 
-a:nth-child(4){
-    border: solid;
+/* Menubar styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  padding-bottom: 30px;
+  border-bottom: none; /* Remove border-bottom */
 }
-a{
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    padding: 6px 6px;
-    margin: 0px 10px;
-    border-radius: 7px;
+
+input {
+  display: none;
 }
-a:hover{
-    background-color: rosybrown;
+
+.highlighted-link {
+  /* Style for the highlighted menu item */
+  border: solid;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 6px 6px;
+  margin: 0px 10px;
+  border-radius: 7px;
+}
+
+a:hover {
+  background-color: rosybrown;
 }
 
 nav {
-    padding: 16px 0px 0px;
+  padding: 16px 0px 0px;
 }
 
 nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    border-radius: 7px;
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  border-radius: 7px;
 }
 
-/* Styles for hamburger menu */
+/* Styles for hamburger menu (likely in a separate media query) */
 .menu-icon {
-    display: none; /* Hide by default */
+  display: none; /* Hide by default */
 }
 
-/* Media query for screen size smaller than a certain width */
-@media screen and (max-width: 690px) {
-    .container{
-        height: 60px;
-    }
-    nav{
-        display: none;
-    }
-
-    .menu-icon {
-        display: flex;
-        cursor: pointer;
-        width: 20px;
-        padding-left: 15px;
-    }
-
-    a:hover{
-        background-color: white;
-    }
-
-    #menu-toggle {
-        display: none; /* Hide checkbox */
-    }
-
-    /* Styles for the dropdown menu */
-    #menu-toggle:checked + label + nav {
-        display: flex;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-        flex-direction: column;
-    }
-
-    #menu-toggle:checked + label + nav a {
-        margin: 5px 0;
-        display: inline-flex;
-    }
-}
-/*menubar end*/
-
-
-
-section:nth-child(2) {
-    color: white;
-    padding: 20px;
-    height: 50vh;
-}
-
-section:nth-child(3) {
-    background-color: white;
-    color: black;
-    height: 50vh;
-    padding: 20px;
-}
-
-@keyframes flash {
-    0% { color: red; }
-    50% { color: blue; }
-    100% { color: red; }
-}
-
-
-footer div{
-    text-align: center;
-}
-
-footer p{
-    padding: 20px 10px;
-    font-size: 12px;
-    animation: flash 2s infinite;
-
-}
+/* 
+  Media queries for responsive adjustments (not included here)
+*/
