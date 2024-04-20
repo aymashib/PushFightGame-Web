@@ -22,7 +22,7 @@ input{
     display: none;
 }
 
-a:nth-child(5){
+a:nth-child(6){
     border: solid;
 }
 a{
@@ -55,7 +55,7 @@ nav a {
 }
 
 /* Media query for screen size smaller than a certain width */
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 760px) {
     .container{
         height: 60px;
     }
@@ -81,15 +81,16 @@ nav a {
     /* Styles for the dropdown menu */
     #menu-toggle:checked + label + nav {
         display: flex;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
         flex-direction: column;
+        text-align: center;
+        position: fixed;
+        margin-top: 80px;
+        width: 100%;
+        background-color: white;
+        padding-bottom: 30px;
+        border-bottom: solid;
+        border-width: 1.5px;
+        transition: all 0.3s ease;
     }
 
     #menu-toggle:checked + label + nav a {
@@ -98,12 +99,52 @@ nav a {
     }
 }
 /*menubar end*/
+h3{
+    padding: 130px 10px 0;
+}
 
-section {
-    padding: 130px 10px;
+section:nth-last-child(4) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section div:nth-last-child(2),
+section div:nth-last-child(1){
+    flex: 1;
+    text-align: center;
+    margin: 10px;
 }
 
 
+body div:nth-child(4){
+    padding-left: 15px;
+}
+
+div:nth-child(4) h2:nth-child(1){
+    padding-bottom: 10px;
+}
+
+div:nth-child(4) p{
+    padding-bottom: 10px;
+}
+
+section img {
+    width: 200px;
+    display: block;
+    margin: auto;
+    height: auto;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 670px){
+    section div:nth-last-child(2),
+    section div:nth-last-child(1){
+        flex-basis: 100%;
+    }
+
+}
+/*footer start*/
 @keyframes flash {
     0% { color: red; }
     50% { color: blue; }
@@ -122,3 +163,4 @@ footer p{
     animation: flash 2s infinite;
     bottom: 0;
 }
+/*footer end*/
