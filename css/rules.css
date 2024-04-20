@@ -1,0 +1,121 @@
+/* Global styles */
+* {
+    margin: 0px; /* Remove default margins */
+    font-family: "Courier New", monospace; /* Set base font family */
+}
+section {
+    margin-bottom: 10%;
+}
+/* Introduction section styles */
+.logo_image {
+    width: 100%; /* Fill container width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Scale to fill container, potentially cropping */
+    object-position: center; /* Center image within container */
+}
+/* Menubar styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding-bottom: 30px;
+    border-bottom: none; /* Remove border-bottom */
+    z-index: 1000;
+}
+input {
+    display: none;
+}
+
+.highlighted-link {
+    /* Style for the highlighted menu item */
+    border: solid;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    padding: 6px 6px;
+    margin: 0 10px;
+    border-radius: 7px;
+}
+
+a:hover {
+    background-color: rosybrown;
+}
+nav {
+    padding: 16px 0px 0px;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    border-radius: 7px;
+}
+
+/* Styles for hamburger menu (likely in a separate media query) */
+.menu-icon {
+    display: none; /* Hide by default */
+}
+main {
+    margin-top: 120px;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+main article {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+main p {
+    color: #666666;
+    line-height: 1.6;
+}
+
+
+.game-board-image {
+    width: 500px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    float: right;
+}
+
+.image-container {
+    margin-left: 20px;
+}
+
+.content {
+    overflow: hidden;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f0f0f0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
