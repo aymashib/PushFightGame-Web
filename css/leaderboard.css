@@ -1,11 +1,12 @@
 /* Global styles */
 * {
     margin: 0px; /* Remove default margins */
-    font-family: "Courier New", monospace; /* Set base font family */
+    font-family: "Courier New"; /* Set base font family */
 }
 section {
     margin-bottom: 10%;
 }
+
 /* Introduction section styles */
 .logo_image {
     width: 100%; /* Fill container width */
@@ -13,20 +14,19 @@ section {
     object-fit: cover; /* Scale to fill container, potentially cropping */
     object-position: center; /* Center image within container */
 }
+
 /* Menubar styles */
 .container {
     display: flex;
     flex-direction: column;
     text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
+    /*position: fixed;*/
     width: 100%;
     background-color: white;
     padding-bottom: 30px;
     border-bottom: none; /* Remove border-bottom */
-    z-index: 1000;
 }
+
 input {
     display: none;
 }
@@ -41,13 +41,14 @@ a {
     color: black;
     font-size: 16px;
     padding: 6px 6px;
-    margin: 0 10px;
+    margin: 0px 10px;
     border-radius: 7px;
 }
 
 a:hover {
     background-color: rosybrown;
 }
+
 nav {
     padding: 16px 0px 0px;
 }
@@ -64,40 +65,49 @@ nav a {
 .menu-icon {
     display: none; /* Hide by default */
 }
-main {
-    margin-top: 120px;
-    padding: 20px;
-    background-color: #f0f0f0;
+
+/*
+  Media queries for responsive adjustments (not included here)
+*/
+
+caption {
+    font-weight: bold;
+    text-align: left;
+    font-size: x-large;
+    text-transform: uppercase;
 }
 
-main article {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+table{
+    width: 100%
+}
+table, th, td {
+    border-spacing: 0;
 }
 
-main p {
-    color: #666666;
-    line-height: 1.6;
+td, th {
+    text-align: center;
+    padding: 6px;
+    width: auto;
+}
+tr {
+    text-align: center;
+    vertical-align: middle;
+    width: 90px;
+    height: 50px;
+    border: 1px solid black;
+}
+td {
+
+    border-bottom: 0.5px solid black; /* Add this line to create a horizontal line */
 }
 
 
-.game-board-image {
-    width: 500px;
-    height: auto;
-    display: block;
-    margin-bottom: 20px;
-    float: right;
+thead th {
+    border-bottom: 1px solid black;
 }
 
-.image-container {
-    margin-left: 20px;
-}
-
-.content {
-    overflow: hidden;
+tfoot th, tfoot td {
+    border-top: 1px solid black;
 }
 
 /*footer start*/
@@ -124,16 +134,3 @@ footer p{
     bottom: 0;
 }
 /*footer end*/
-
-
-
-
-
-
-
-
-
-
-
-
-
