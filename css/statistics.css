@@ -4,7 +4,10 @@
   font-family: "Courier New"; /* Set base font family */
 }
 section {
-  margin-bottom: 10%;
+  margin-bottom: 50px;
+}
+p {
+  line-height: 40px;
 }
 
 /* Introduction section styles */
@@ -66,6 +69,73 @@ nav a {
   display: none; /* Hide by default */
 }
 
-/* 
-  Media queries for responsive adjustments (not included here)
-*/
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  text-align: center; /* Centra el texto */
+  width: 80%;
+}
+footer {
+  bottom: 0;
+  text-align: center;
+}
+/* Estilos específicos para la página de estadísticas */
+
+.content-container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 100vh; /* Altura igual al 100% del viewport */
+  margin-left: 10vh;
+}
+
+.contact-container {
+  text-align: center; /* Centrar el texto */
+  max-width: 600px; /* Ancho máximo */
+  background-color: #f8f9fa; /* Color de fondo */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilos para el formulario */
+
+/* Estilos para los campos de entrada y el área de texto */
+form input[type="text"],
+form textarea {
+  width: 100%; /* Ancho completo */
+  margin-bottom: 10px; /* Espacio inferior */
+  padding: 8px; /* Espaciado interno */
+  box-sizing: border-box; /* Incluir bordes en el tamaño */
+  border: 1px solid #ced4da; /* Borde */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos para el botón de enviar */
+form input[type="submit"] {
+  background-color: #007bff; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno */
+  cursor: pointer; /* Cambio de cursor */
+}
+
+/* Estilos para el mensaje de éxito */
+.success-message {
+  color: #28a745; /* Color del texto de éxito */
+}
+
+/* Estilos para el mensaje de advertencia */
+.error-message {
+  color: #dc3545; /* Color del texto de error */
+}
+button {
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
