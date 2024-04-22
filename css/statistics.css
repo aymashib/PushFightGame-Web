@@ -25,7 +25,7 @@ p {
 }
 
 /* Menubar styles */
-.container {
+.container:nth-child(1) {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -118,7 +118,61 @@ section:nth-child(4) div:nth-last-child(1) {
   width: 100%;
   display: flex;
   justify-content: space-around;
+/* Media query for screen size smaller than a certain width */
+@media screen and (max-width: 760px) {
+  .container{
+    height: 60px;
+  }
+  nav{
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+    cursor: pointer;
+    width: 20px;
+    padding-left: 15px;
+  }
+
+  a:hover{
+    background-color: white;
+  }
+
+  #menu-toggle {
+    display: none; /* Hide checkbox */
+  }
+
+  /* Styles for the dropdown menu */
+  #menu-toggle:checked + label + nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: fixed;
+    margin-top: 80px;
+    width: 100%;
+    background-color: white;
+    padding-bottom: 30px;
+    border-bottom: solid;
+    border-width: 1.5px;
+    transition: all 0.3s ease;
+  }
+
+  #menu-toggle:checked + label + nav a {
+    margin: 5px 0;
+    display: inline-flex;
+  }
+}
+/*menubar end*/
+
+
+h3{
+  padding: 140px 10px 0;
+}
+.stats{
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -140,6 +194,36 @@ section img {
 footer {
   text-align: center;
   margin-top: 30px; /* Ajuste de margen superior */
+.stats img{
+  width: 1100px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.stats img:nth-child(1){
+  margin-bottom: 100px;
+}
+
+
+
+@media screen and (max-width: 1100px){
+  .stats img{
+  width: 600px;
+  }
+}
+@media screen and (max-width: 600px){
+  .stats img{
+    width: 500px;
+  }
+}
+
+
+
+/*footer start*/
+@keyframes flash {
+  0% { color: red; }
+  50% { color: blue; }
+  100% { color: red; }
 }
 
 footer div {

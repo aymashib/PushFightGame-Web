@@ -55,7 +55,7 @@ nav a {
 }
 
 /* Media query for screen size smaller than a certain width */
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 780px) {
     .container{
         height: 60px;
     }
@@ -105,17 +105,20 @@ h3{
 
 section:nth-last-child(4) {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    margin: 20px;
 }
 
-section div:nth-last-child(2),
+section div:nth-last-child(2){
+    flex: 1;
+    text-align: center;
+    margin: 10px;
+}
 section div:nth-last-child(1){
     flex: 1;
     text-align: center;
     margin: 10px;
 }
-
 
 body div:nth-child(4){
     padding-left: 15px;
@@ -138,6 +141,9 @@ section img {
 }
 
 @media screen and (max-width: 670px){
+    section{
+        flex-direction: column;
+    }
     section div:nth-last-child(2),
     section div:nth-last-child(1){
         flex-basis: 100%;
