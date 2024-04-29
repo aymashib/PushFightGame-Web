@@ -1,11 +1,13 @@
 /* Global styles */
 * {
-  margin: 0px; /* Remove default margins */
-  font-family: "Courier New"; /* Set base font family */
+  margin: 0;
+  font-family: "Courier New";
 }
+
 section {
   margin-bottom: 50px;
 }
+
 p {
   line-height: 40px;
 }
@@ -18,10 +20,10 @@ p {
 }
 
 .logo_image {
-  width: 100%; /* Fill container width */
-  height: 622px; /* Maintain aspect ratio */
-  object-fit: cover; /* Scale to fill container, potentially cropping */
-  object-position: center; /* Center image within container */
+  width: 100%;
+  height: 86vh;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Menubar styles */
@@ -33,7 +35,7 @@ p {
   background-color: white;
   padding-bottom: 30px;
   border-bottom: solid;
-  border-width: 1.5px; /* Remove border-bottom */
+  border-width: 1.5px;
 }
 
 input {
@@ -46,11 +48,10 @@ a:nth-child(4) {
 
 a {
   text-decoration: none;
-  color: black;
+
   font-size: 16px;
   padding: 6px 6px;
   margin: 0px 10px;
-  border-radius: 7px;
 }
 
 a:hover {
@@ -97,9 +98,18 @@ nav a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 80%;
+  width: fit-content;
+  margin: 3%;
 }
-
+#about {
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+#call-to-action {
+  display: flex;
+  margin-left: 10%;
+}
 h3 {
   padding: 60px 10px 0;
 }
@@ -118,12 +128,14 @@ section:nth-child(4) div:nth-last-child(1) {
   width: 100%;
   display: flex;
   justify-content: space-around;
+}
+
 /* Media query for screen size smaller than a certain width */
 @media screen and (max-width: 760px) {
-  .container{
+  .container {
     height: 60px;
   }
-  nav{
+  nav {
     display: none;
   }
 
@@ -134,7 +146,7 @@ section:nth-child(4) div:nth-last-child(1) {
     padding-left: 15px;
   }
 
-  a:hover{
+  a:hover {
     background-color: white;
   }
 
@@ -162,13 +174,14 @@ section:nth-child(4) div:nth-last-child(1) {
     display: inline-flex;
   }
 }
-/*menubar end*/
 
+/* Menubar end */
 
-h3{
+h3 {
   padding: 140px 10px 0;
 }
-.stats{
+
+.stats {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -182,7 +195,7 @@ div:nth-child(1) h2:nth-child(1) {
 
 div:nth-child(4) p {
   padding-bottom: 10px;
-  margin-top: 50px; /* Ajuste de margen superior */
+  margin-top: 50px;
 }
 
 section img {
@@ -193,37 +206,43 @@ section img {
 
 footer {
   text-align: center;
-  margin-top: 30px; /* Ajuste de margen superior */
-.stats img{
+  margin-top: 30px;
+}
+
+.stats img {
   width: 1100px;
   display: flex;
   text-align: center;
   justify-content: center;
 }
-.stats img:nth-child(1){
+
+.stats img:nth-child(1) {
   margin-bottom: 100px;
 }
 
-
-
-@media screen and (max-width: 1100px){
-  .stats img{
-  width: 600px;
+@media screen and (max-width: 1100px) {
+  .stats img {
+    width: 600px;
   }
 }
-@media screen and (max-width: 600px){
-  .stats img{
+
+@media screen and (max-width: 600px) {
+  .stats img {
     width: 500px;
   }
 }
 
-
-
-/*footer start*/
+/* Footer start */
 @keyframes flash {
-  0% { color: red; }
-  50% { color: blue; }
-  100% { color: red; }
+  0% {
+    color: red;
+  }
+  50% {
+    color: blue;
+  }
+  100% {
+    color: red;
+  }
 }
 
 footer div {
@@ -237,6 +256,7 @@ footer p {
   animation: flash 2s infinite;
   bottom: 0;
 }
+
 .team-container {
   display: flex;
   flex-wrap: wrap;
@@ -322,7 +342,6 @@ footer p {
 .contact-submit-button {
   padding: 10px 20px;
   font-size: 18px;
-
   border: none;
   border-radius: 5px;
   cursor: pointer;
