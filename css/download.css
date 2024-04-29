@@ -12,3 +12,7 @@ section:nth-child(1) img{
 section:nth-child(1) div{
     padding: 20px;
 }
+
+nav a:nth-child(6){
+    border: solid;
+}

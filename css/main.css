@@ -41,9 +41,6 @@ nav{
     justify-content: center;
 }
 
-nav a:nth-child(6){
-    border: solid;
-}
 nav a:hover{
     background-color: rosybrown;
 }
