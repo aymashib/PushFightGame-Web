@@ -17,6 +17,9 @@ section {
   object-fit: cover; /* Scale to fill container, potentially cropping */
   object-position: center; /* Center image within container */
 }
+h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
 /* Menubar styles */
 .container {
   display: flex;

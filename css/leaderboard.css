@@ -56,6 +56,9 @@ a {
 a:hover {
   background-color: rosybrown;
 }
+h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
 h1:hover {
   color: rgb(203, 4, 45);
   transition: 1s;
