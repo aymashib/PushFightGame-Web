@@ -3,7 +3,7 @@
   margin: 0px; /* Remove default margins */
   font-family: "Courier New"; /* Set base font family */
   margin: 0 auto;
-  width: 100%;
+  max-width: 1200px;
   text-align: center;
 }
 nav {
@@ -73,6 +73,9 @@ nav a {
   border-radius: 7px;
 }
 
+main {
+  max-width: 1200px;
+}
 /* Styles for hamburger menu (likely in a separate media query) */
 .menu-icon {
   display: none; /* Hide by default */
@@ -82,6 +85,10 @@ nav a {
   Media queries for responsive adjustments (not included here)
 */
 
+.caption-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
 caption {
   font-weight: bold;
   text-align: left;
@@ -91,6 +98,8 @@ caption {
 
 table {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 table,
 th,

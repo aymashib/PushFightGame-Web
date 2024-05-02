@@ -4,19 +4,13 @@
   font-family: "Courier New";
   color: black;
   margin: 0 auto;
-  width: 100%;
+  max-width: 1200px;
   text-align: center;
 }
-nav,
-nav + *,
-.container,
-header {
-  margin: initial;
-  font-family: initial;
-  color: initial;
-  margin: initial;
-  width: initial;
-  text-align: initial;
+.p-div {
+  position: relative;
+  display: flex;
+  width: 60%;
 }
 
 nav a {
@@ -40,7 +34,20 @@ section {
   display: ruby-text;
   margin-bottom: 50px;
 }
+.video-container {
+  max-width: 50%;
+  height: auto;
+  max-width: 1200px;
+}
 
+.fixed-position {
+  max-width: 1000px;
+}
+video {
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+}
 header h1 {
   display: flex;
   justify-content: center;
@@ -53,8 +60,8 @@ header marquee {
 
 nav {
   display: flex;
-  padding: 10px;
   justify-content: center;
+  margin-bottom: 100px;
 }
 .screenshot-image {
   width: 445px;
@@ -74,9 +81,6 @@ input,
 @media screen and (max-width: 760px) {
   nav {
     display: none;
-  }
-  .video-container {
-    margin-top: 10%;
   }
 
   .menu-icon {
@@ -115,7 +119,12 @@ input,
     max-width: 100%;
     height: auto;
   }
-
+  .caption-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   #menu-toggle:checked + label + nav a {
     margin: 5px 0;
     display: inline-flex;
@@ -125,6 +134,7 @@ input,
     display: flex;
     flex-direction: column;
     text-align: center;
+    max-width: 1200px;
   }
 }
 /*interactive nav*/
@@ -214,7 +224,7 @@ footer {
   border: 1px solid #ccc;
   padding: 20px;
   word-wrap: break-word;
-  max-width: 95%;
+  max-width: 70%;
 }
 
 .team-member img {
