@@ -229,7 +229,7 @@ footer p {
   max-width: 300px;
 }
 .new-contact-submit-button:hover {
-  background-color: black;
+  background-color: rgb(203, 4, 45);
   color: whitesmoke;
 }
 footer {
