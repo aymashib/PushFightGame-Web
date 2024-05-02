@@ -3,6 +3,20 @@
   margin: 0;
   font-family: "Courier New";
   color: black;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+nav,
+nav + *,
+.container,
+header {
+  margin: initial;
+  font-family: initial;
+  color: initial;
+  margin: initial;
+  width: initial;
+  text-align: initial;
 }
 
 nav a {
@@ -23,6 +37,8 @@ section {
   margin: 15px 15px 17px 15px;
   border-radius: 10px;
   background-color: white;
+  display: ruby-text;
+  margin-bottom: 50px;
 }
 
 header h1 {
@@ -40,6 +56,10 @@ nav {
   padding: 10px;
   justify-content: center;
 }
+.screenshot-image {
+  width: 445px;
+  height: 250px;
+}
 
 nav a:hover {
   background-color: rosybrown;
@@ -54,6 +74,9 @@ input,
 @media screen and (max-width: 760px) {
   nav {
     display: none;
+  }
+  .video-container {
+    margin-top: 10%;
   }
 
   .menu-icon {
@@ -82,6 +105,16 @@ input,
     padding-bottom: 30px;
     transition: all 0.3s ease;
   }
+  .logo-container-center {
+    margin: 0 auto;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+  }
+  .logo-image {
+    max-width: 100%;
+    height: auto;
+  }
 
   #menu-toggle:checked + label + nav a {
     margin: 5px 0;
@@ -108,6 +141,10 @@ input,
     color: red;
   }
 }
+h1:hover {
+  color: rgb(203, 4, 45);
+  transition: 1s;
+}
 
 footer div {
   bottom: 0;
@@ -124,7 +161,7 @@ footer p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10%;
+  margin-top: 8%;
 }
 
 .new-contact-title {
@@ -176,11 +213,14 @@ footer {
 .team-member {
   border: 1px solid #ccc;
   padding: 20px;
+  word-wrap: break-word;
+  max-width: 95%;
 }
 
 .team-member img {
-  max-width: 100%;
-  height: auto;
+  width: 35vh;
+  height: 45vh;
+  border-radius: 35px;
 }
 
 .team-member h2 {

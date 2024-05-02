@@ -1,139 +1,145 @@
 /* Global styles */
 * {
-    margin: 0px; /* Remove default margins */
-    font-family: "Courier New", monospace; /* Set base font family */
+  margin: 0px; /* Remove default margins */
+  font-family: "Courier New", monospace; /* Set base font family */
+  margin: 0 auto;
+  width: 95%;
+  text-align: center;
 }
 section {
-    margin-bottom: 10%;
+  margin-bottom: 10%;
 }
+
 /* Introduction section styles */
 .logo_image {
-    width: 100%; /* Fill container width */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Scale to fill container, potentially cropping */
-    object-position: center; /* Center image within container */
+  width: 100%; /* Fill container width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Scale to fill container, potentially cropping */
+  object-position: center; /* Center image within container */
 }
 /* Menubar styles */
 .container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    padding-bottom: 30px;
-    border-bottom: none; /* Remove border-bottom */
-    z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding-bottom: 30px;
+  border-bottom: none; /* Remove border-bottom */
+  z-index: 1000;
 }
 input {
-    display: none;
+  display: none;
 }
 
 .highlighted-link {
-    /* Style for the highlighted menu item */
-    border: solid;
+  /* Style for the highlighted menu item */
+  border: solid;
 }
 
 a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    padding: 6px 6px;
-    margin: 0 10px;
-    border-radius: 7px;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 6px 6px;
+  margin: 0 10px;
+  border-radius: 7px;
 }
 
-a:hover {
-    background-color: rosybrown;
-}
 nav {
-    padding: 16px 0px 0px;
+  padding: 16px 0px 0px;
+  display: flex;
+  justify-content: center;
 }
 
 nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    border-radius: 7px;
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  border-radius: 7px;
+}
+nav a:hover {
+  background-color: rosybrown; /* Remove background color on hover */
+}
+
+.menu-icon {
+  display: none; /* Hide the menu icon */
 }
 
 /* Styles for hamburger menu (likely in a separate media query) */
 .menu-icon {
-    display: none; /* Hide by default */
+  display: none; /* Hide by default */
 }
 main {
-    margin-top: 120px;
-    padding: 20px;
-    background-color: #f0f0f0;
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+h1:hover {
+  color: rgb(203, 4, 45);
+  transition: 1s;
 }
 
 main article {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 main p {
-    color: #666666;
-    line-height: 1.6;
+  color: #666666;
+  line-height: 1.6;
 }
 
-
 .game-board-image {
-    width: 500px;
-    height: auto;
-    display: block;
-    margin-bottom: 20px;
-    float: right;
+  width: 500px;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+  float: right;
 }
 
 .image-container {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .content {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 /*footer start*/
 @keyframes flash {
-    0% { color: red; }
-    50% { color: blue; }
-    100% { color: red; }
+  0% {
+    color: red;
+  }
+  50% {
+    color: blue;
+  }
+  100% {
+    color: red;
+  }
 }
-footer{
-    position: relative;
-    bottom: 0;
-    text-align: center;
+footer {
+  position: relative;
+  bottom: 0;
+  text-align: center;
 }
 
-footer div{
-    bottom: 0;
-    text-align: center;
+footer div {
+  bottom: 0;
+  text-align: center;
 }
 
-footer p{
-    padding: 20px 10px;
-    font-size: 12px;
-    animation: flash 2s infinite;
-    bottom: 0;
+footer p {
+  padding: 20px 10px;
+  font-size: 12px;
+  animation: flash 2s infinite;
+  bottom: 0;
 }
 /*footer end*/
-
-
-
-
-
-
-
-
-
-
-
-
-
