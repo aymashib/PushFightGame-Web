@@ -70,6 +70,12 @@ header h1 {
   justify-content: center;
 }
 
+.title-team-element {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 header marquee {
   width: 100%;
   animation: flash 2s infinite;
@@ -223,7 +229,7 @@ footer p {
   max-width: 300px;
 }
 .new-contact-submit-button:hover {
-  background-color: black;
+  background-color: rgb(203, 4, 45);
   color: whitesmoke;
 }
 footer {
@@ -243,6 +249,10 @@ footer {
   padding: 20px;
   word-wrap: break-word;
   max-width: 70%;
+}
+.img-element {
+  height: 50vh;
+  width: 105vh;
 }
 
 .team-member img {
