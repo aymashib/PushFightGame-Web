@@ -5,6 +5,7 @@
   margin: 0 auto;
   max-width: 1200px;
   text-align: center;
+  background-color: white;
 }
 nav {
   display: flex;
@@ -42,6 +43,11 @@ input {
 .highlighted-link {
   /* Style for the highlighted menu item */
   border: solid;
+}
+main {
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #f0f0f0;
 }
 
 a {

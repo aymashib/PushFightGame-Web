@@ -53,20 +53,20 @@ a {
 }
 
 nav {
-  padding: 16px 0px 0px;
+  margin-top: 15px;
   display: flex;
   justify-content: center;
 }
 
 nav a {
-  margin: 0 10px;
   text-decoration: none;
   color: black;
-  font-size: 16px;
+  padding: 6px 10px;
+  margin: 0 3px;
   border-radius: 7px;
 }
 nav a:hover {
-  background-color: rosybrown; /* Remove background color on hover */
+  background-color: rosybrown;
 }
 
 .menu-icon {
