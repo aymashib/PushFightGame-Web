@@ -55,7 +55,7 @@ a {
 nav {
   margin-top: 15px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 nav a {
@@ -87,6 +87,22 @@ h1:hover {
   transition: 1s;
 }
 
+.content {
+  overflow: hidden;
+}
+
+.game-board-image {
+  float: right;
+  width: 400px;
+  height: auto;
+  margin-left: 20px;
+}
+
+.text {
+  overflow: hidden;
+}
+
+
 main article {
   margin-bottom: 20px;
   padding: 20px;
@@ -100,13 +116,7 @@ main p {
   line-height: 1.6;
 }
 
-.game-board-image {
-  width: 500px;
-  height: auto;
-  display: block;
-  margin-bottom: 20px;
-  float: right;
-}
+
 
 .image-container {
   margin-left: 20px;
@@ -146,7 +156,12 @@ footer p {
   bottom: 0;
 }
 /*footer end*/
+
 @media only screen and (max-width: 600px) {
+  .text {
+    float: none;
+    width: 100%;
+  }
   .game-board-image {
     width: 100%;
     height: auto;
