@@ -30,7 +30,6 @@ h1 {
   left: 0;
   width: 100%;
   background-color: white;
-  padding-bottom: 30px;
   border-bottom: none; /* Remove border-bottom */
   z-index: 1000;
 }
@@ -102,7 +101,6 @@ h1:hover {
   overflow: hidden;
 }
 
-
 main article {
   margin-bottom: 20px;
   padding: 20px;
@@ -115,8 +113,6 @@ main p {
   color: #666666;
   line-height: 1.6;
 }
-
-
 
 .image-container {
   margin-left: 20px;
