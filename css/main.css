@@ -3,31 +3,24 @@
   margin: 0;
   font-family: "Courier New";
   color: black;
-  margin: 0 auto;
-  max-width: 1200px;
   text-align: center;
   background-color: #ffffff;
+  box-sizing: border-box;
 }
+
+a {
+  text-decoration: none;
+}
+
 main {
   margin-bottom: 20px;
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   width: 97%;
+  margin: 0 auto;
 }
-.p-div {
-  position: relative;
-  display: flex;
-  width: 60%;
-}
-.download-button {
-  text-decoration: none;
-}
-.download-button:hover {
-  color: red;
-  text-decoration: underline;
-}
+
 nav a {
   text-decoration: none;
   color: black;
@@ -37,46 +30,23 @@ nav a {
   border-radius: 7px;
 }
 
-/* body {
-  background-color: #666666;
-} */
+body {
+  overflow-x: hidden;
+}
 
 section {
   padding: 5px;
-  margin: 15px 15px 17px 15px;
+  margin: 15px;
   border-radius: 10px;
   background-color: white;
-  display: ruby-text;
   margin-bottom: 50px;
 }
-.video-container {
-  max-width: 50%;
-  height: auto;
-  max-width: 1200px;
-}
 
-.fixed-position {
-  max-width: 1000px;
-}
-video {
-  width: 100%;
-  height: auto;
-  max-width: 1200px;
-}
-h1 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-}
 header h1 {
   display: flex;
   justify-content: center;
 }
 
-.title-team-element {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 header marquee {
   width: 100%;
   animation: flash 2s infinite;
@@ -87,10 +57,6 @@ nav {
   justify-content: center;
   margin-bottom: 30px;
   margin-top: 15px;
-}
-.screenshot-image {
-  width: 445px;
-  height: 250px;
 }
 
 nav a:hover {
@@ -111,8 +77,8 @@ input,
   .menu-icon {
     display: flex;
     cursor: pointer;
-    width: 20px;
-    padding-left: 15px;
+    width: 25px;
+    padding: 0 0 30px 15px;
   }
 
   nav a:hover {
@@ -128,27 +94,11 @@ input,
     display: flex;
     flex-direction: column;
     text-align: center;
-    position: fixed;
+    /*position: fixed;*/
     width: 100%;
     background-color: white;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     transition: all 0.3s ease;
-  }
-  .logo-container-center {
-    margin: 0 auto;
-    width: 100%;
-    height: 500px;
-    text-align: center;
-  }
-  .logo-image {
-    max-width: 100%;
-    height: auto;
-  }
-  .caption-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   #menu-toggle:checked + label + nav a {
     margin: 5px 0;
@@ -159,9 +109,9 @@ input,
     display: flex;
     flex-direction: column;
     text-align: center;
-    max-width: 1200px;
   }
 }
+
 /*interactive nav*/
 
 /*footer*/
@@ -176,6 +126,7 @@ input,
     color: red;
   }
 }
+
 h1:hover {
   color: rgb(203, 4, 45);
   transition: 1s;
@@ -191,82 +142,4 @@ footer p {
   font-size: 12px;
   animation: flash 2s infinite;
   bottom: 0;
-}
-.new-contact-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 8%;
-}
-
-.new-contact-title {
-  margin-bottom: 10px;
-}
-
-.new-contact-info-title {
-  margin-top: 22px;
-  margin-bottom: 15px;
-}
-
-.new-contact-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.new-contact-message-title {
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
-
-.new-contact-form input,
-.new-contact-form textarea {
-  margin-bottom: 35px;
-  width: 100%;
-  max-width: 300px;
-}
-
-.new-contact-submit-button {
-  width: 100%;
-  max-width: 300px;
-}
-.new-contact-submit-button:hover {
-  background-color: rgb(203, 4, 45);
-  color: whitesmoke;
-}
-footer {
-  text-align: center;
-  margin-top: 20px; /* Ajusta el espacio entre el contenido y el footer si es necesario */
-}
-.team-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
-  text-align: center;
-}
-
-.team-member {
-  border: 1px solid #ccc;
-  padding: 20px;
-  word-wrap: break-word;
-  max-width: 70%;
-}
-.img-element {
-  height: 50vh;
-  width: 105vh;
-}
-
-.team-member img {
-  width: 35vh;
-  height: 45vh;
-  border-radius: 35px;
-}
-
-.team-member h2 {
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
-.team-member p {
-  margin-bottom: 10px;
 }

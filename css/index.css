@@ -1,0 +1,45 @@
+.screenshot-container img{
+    width: 50%;
+}
+
+.screenshot-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+video {
+    width: 100%;
+}
+
+.screenshot-container img {
+    width: calc(50% - 10px); /* Adjust according to the space you want */
+    margin: 5px; /* Add margin between images */
+}
+
+@media screen and (max-width: 760px) {
+    .screenshot-container img,
+    logo-container-center img{
+        width: 100%;
+        max-width: none;
+        height: auto;
+    }
+    .logo-container-center{
+        height: 50%;
+    }
+}
+
+.logo-container-center {
+    text-align: center; /* Center the logo */
+}
+
+.logo-container-center img {
+    max-width: 100%; /* Make sure the logo doesn't exceed its container's width */
+}
+
+nav a:nth-child(1) {
+    border: solid;
+}
+
+
+
+

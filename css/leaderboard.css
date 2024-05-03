@@ -1,135 +1,21 @@
-/* Global styles */
-* {
-  margin: 0px; /* Remove default margins */
-  font-family: "Courier New"; /* Set base font family */
-  margin: 0 auto;
-  max-width: 1200px;
-  text-align: center;
-  background-color: white;
-}
-nav {
-  display: flex;
-  padding: 10px;
-  justify-content: center;
-}
-section {
-  margin-bottom: 10%;
-}
-main {
-  margin-top: 10px;
-  padding: 20px;
-  background-color: #f0f0f0;
-}
-main table {
-  margin-bottom: 20px;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 0px 0px 10px 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Introduction section styles */
-.logo_image {
-  width: 100%; /* Fill container width */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Scale to fill container, potentially cropping */
-  object-position: center; /* Center image within container */
-}
-
-/* Menubar styles */
-.container {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  /*position: fixed;*/
-  width: 70%;
-  background-color: white;
-  padding-bottom: 30px;
-  border-bottom: none; /* Remove border-bottom */
-}
-
-input {
-  display: none;
-}
-
-.highlighted-link {
-  /* Style for the highlighted menu item */
-  border: solid;
-}
-main {
-  margin-top: 10px;
-  padding: 20px;
-  background-color: #f0f0f0;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  font-size: 16px;
-  padding: 6px 6px;
-  margin: 0px 10px;
-  border-radius: 7px;
-}
-
-a:hover {
-  background-color: rosybrown;
-}
-h1 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-}
-h1:hover {
-  color: rgb(203, 4, 45);
-  transition: 1s;
-}
-
-nav a {
-  margin: 0 5px;
-  text-decoration: none;
-  color: black;
-  font-size: 16px;
-  border-radius: 7px;
-}
-
-main {
-  max-width: 1200px;
-}
-/* Styles for hamburger menu (likely in a separate media query) */
-.menu-icon {
-  display: none; /* Hide by default */
-}
-
-/*
-  Media queries for responsive adjustments (not included here)
-*/
-
 .caption-container {
   text-align: center;
   margin-bottom: 20px;
 }
 caption {
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   font-size: x-large;
   text-transform: uppercase;
+  padding-top: 15px;
 }
 
 table {
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
 }
-table,
-th,
-td {
-  border-spacing: 0;
-}
 
-td,
-th {
-  text-align: center;
-  padding: 6px;
-  width: auto;
-}
+
 tr {
   text-align: center;
   vertical-align: middle;
@@ -141,51 +27,11 @@ td {
   border-bottom: 0.5px solid black; /* Add this line to create a horizontal line */
 }
 
-thead th {
-  border-bottom: 1px solid black;
+nav a:nth-child(3) {
+  border: solid;
 }
 
-tfoot th,
-tfoot td {
-  border-top: 1px solid black;
-}
 
-/*footer start*/
-@keyframes flash {
-  0% {
-    color: red;
-  }
-  50% {
-    color: blue;
-  }
-  100% {
-    color: red;
-  }
-}
-footer {
-  position: relative;
-  bottom: 0;
-  text-align: center;
-}
 
-footer div {
-  bottom: 0;
-  text-align: center;
-}
 
-footer p {
-  padding: 20px 10px;
-  font-size: 12px;
-  animation: flash 2s infinite;
-  bottom: 0;
-}
-/*footer end*/
-@media only screen and (max-width: 768px) {
-  nav {
-    flex-direction: column;
-  }
 
-  nav a {
-    margin: 10px 0;
-  }
-}
