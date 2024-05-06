@@ -1,0 +1,23 @@
+nav a {
+  margin-right: 20px;
+}
+
+nav a:nth-child(2) {
+  border: solid;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+
+  nav a {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  img{
+    width: 300px;
+  }
+}
+

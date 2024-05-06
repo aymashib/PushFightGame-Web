@@ -1,0 +1,8 @@
+img{
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+nav a:nth-child(4) {
+    border: solid;
+}
