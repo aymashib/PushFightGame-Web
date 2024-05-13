@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Query</title>
+  <link rel="icon" href="/media/icon.png" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <marquee>Join our community and get the game for FREE!</marquee>
+    <h1>Push Fight</h1>
+    <span id="welcomeMessage"></span>
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <input type="checkbox" id="menu-toggle" />
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="rules.html">Rules</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="statistics.html">Statistics</a>
+      <a href="team.html">Team</a>
+      <a href="download.html">Download</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" id="loginButton">Login</a>
+      <a href="form.html" >Search Player</a>
+
+    </nav>
+  </div>
+</header>
+<div class="new-contact-container">
+<form id="gameQueryForm">
+  <label for="id">ID:</label>
+  <textarea id="id" name="id"></textarea><br><br>
+
+  <label for="player">Player Name:</label>
+  <textarea id="player" name="player"></textarea><br><br>
+
+
+
+  <label for="win">Wins:</label>
+  <textarea id="win" name="win"></textarea><br><br>
+
+
+
+  <button type="button" id="searchButton">Search</button>
+  <button type="button" id="clearButton">Clear Filters</button>
+
+</form>
+
+
+<table id="gameTable">
+  <thead>
+  <tr>
+    <th class="td-header">Id</th>
+    <th class="td-header"> Name</th>
+    <th class="td-header" >Games</th>
+    <th class="td-header" >Wins</th>
+    <th class="td-header" >Losses</th>
+    <th id="Losses">Win%</th>
+    <th id="Wins">Avg Moves Won</th>
+    <th class="td-header" >Avg Duration per Move</th>
+    <th class="td-header" >Avg Duration per Turn</th>
+
+  </tr>
+  </thead>
+  <br>
+  <tbody id="gameTableBody"></tbody>
+</table>
+</div>
+
+<script src="../js/gameQuery.js"></script>
+</body>
+</html>
