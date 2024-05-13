@@ -5,6 +5,7 @@
     <title>Rules</title>
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/rules.css" />
+    <script src="../js/logOutButton.js" type="module"></script>
   </head>
   <body>
     <!--menubar start-->
@@ -14,16 +15,18 @@
           <marquee behavior="scroll" direction="left" scrollamount="5" >Join our community and get the game for FREE!</marquee>
         </div>
         <h1>Push Fight</h1>
+        <span id="welcomeMessage"></span>
         <input type="checkbox" id="menu-toggle" />
         <label for="menu-toggle" class="menu-icon">&#9776;</label>
         <nav>
-          <a href="../index.html">Home</a>
+          <a href="home.html">Home</a>
           <a href="rules.html">Rules</a>
-          <a href="leaderboard.html">Leaderboard</a>
+          <a href="leaderboard.html" id="LBbtn">Leaderboard</a>
           <a href="statistics.html">Statistics</a>
           <a href="team.html">Team</a>
           <a href="download.html">Download</a>
           <a href="contact.html">Contact</a>
+          <a href="login.html" id="loginButton">Login</a>
         </nav>
       </div>
     </header>
@@ -36,6 +39,12 @@
             <h2>The Rules of the Game</h2>
             <p>
               <br />
+              <img
+                      src="../media/GameBoard.jpeg"
+                      alt="GameBoard"
+                      class="game-board-image"
+              />
+              <br />
               <strong>TO START:</strong>
               <br />
               The player with the white team chooses one side of the thick
@@ -44,11 +53,6 @@
               don't have to do that. Next, the player with the brown team
               positions the brown pieces on the other side of the center line.
               <br />
-              <img
-                src="../media/GameBoard.jpeg"
-                alt="GameBoard"
-                class="game-board-image"
-              />
               <br />
               <strong> TO PLAY:</strong>
               <br />
@@ -105,7 +109,7 @@
               <br />
               There are a lot of places at each end of the board where you can
               push them off. You can also win if your opponent surrenders
-              because he or she is trapped and can't get out
+              because he or she is trapped and can't get out.
             </p>
           </div>
         </section>

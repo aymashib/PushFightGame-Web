@@ -1,47 +1,64 @@
-.screenshot-container img{
-    width: 50%;
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
 }
 
-.screenshot-container {
+.background {
+    background-image: url('../media/pushfightLogo.jpg'); /* Adjust path accordingly */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
-video {
+
+
+.container {
     width: 100%;
+    max-width: 600px;
 }
 
-.screenshot-container img {
-    width: calc(50% - 10px); /* Adjust according to the space you want */
-    margin: 5px; /* Add margin between images */
+.box {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    padding: 10px 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-@media screen and (max-width: 760px) {
-    .screenshot-container img,
-    logo-container-center img{
-        width: 100%;
-        max-width: none;
-        height: auto;
-    }
-    .logo-container-center{
-        height: 50%;
-    }
+h1 {
+    color: #ffa500;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.logo-container-center {
-    text-align: center; /* Center the logo */
+.inner-box {
+    border-top: 2px solid #ffa500;
+    padding-top: 40px;
+    text-align: center;
 }
 
-.logo-container-center img {
-    max-width: 100%; /* Make sure the logo doesn't exceed its container's width */
+.btn {
+    padding: 15px 30px;
+    background-color: transparent;
+    color: #ffa500;
+    border: 2px solid #ffa500;
+    border-radius: 5px;
+    margin: 0 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-nav a:nth-child(1) {
-    border: solid;
+.btn:hover {
+    background-color: #ffa500;
+    color: #fff;
 }
 
-
-
-
-
-
+.policy {
+    font-size: 16px;
+    color: #ffa500;
+    margin-top: 20px;
+}

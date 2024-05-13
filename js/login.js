@@ -1,4 +1,4 @@
-import { usersJSON } from "./users.js";
+import { usersJSON } from "./db/users.js";
 
 const users = usersJSON; // Make sure userJSON is defined or remove this line if not needed
 
