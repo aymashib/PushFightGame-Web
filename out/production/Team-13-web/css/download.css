@@ -1,0 +1,46 @@
+section {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+section img {
+  width: 200px;
+}
+
+article {
+  text-align: center;
+}
+
+p{
+  font-size: large;
+  font-weight: bolder;
+}
+
+main{
+  margin-bottom: 190px;
+}
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+  section.downloads {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main{
+    margin-bottom: 0;
+  }
+
+  section.downloads div {
+    margin-bottom: 20px;
+  }
+
+  section.downloads img {
+    max-width: 100%;
+  }
+}
+
+nav a:nth-child(6) {
+  border: solid;
+}

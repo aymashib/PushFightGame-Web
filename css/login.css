@@ -1,0 +1,90 @@
+main div{
+    display: flex;
+    margin: 14px;
+}
+main div label{
+    margin: 0 20px;
+}
+main div input{
+    background-color: white;
+    color: black;
+    border-style: none;
+    border-radius: 5px;
+    font-size: large;
+    width: 200px;
+}
+
+form input{
+    padding: 5px 10px;
+    background-color: #cccccc;
+    color: black;
+    border-style: none;
+    border-radius: 10px;
+    transition: 0.5s;
+
+}
+
+form input:hover{
+    background-color: dimgray;
+    color: white;
+    transition: 0.5s;
+}
+
+
+
+/*--------------------------------------------------------------------------------*/
+*{
+    color: white;
+    background-color: black;
+    margin: 0;
+    font-family: "Courier New";
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+@keyframes flash {
+    0% {
+        color: red;
+    }
+    50% {
+        color: blue;
+    }
+    100% {
+        color: red;
+    }
+}
+
+h1:hover {
+    color: rgb(203, 4, 45);
+    transition: 1s;
+}
+
+footer div {
+    bottom: 0;
+    text-align: center;
+}
+
+footer p {
+    padding: 20px 10px;
+    font-size: 12px;
+    animation: flash 2s infinite;
+    bottom: 0;
+}
