@@ -70,5 +70,29 @@ export const usersJSON = [
     "name": "AI_BOT",
     "password": "tob_ia",
     "isAdmin": false
+  },
+  {
+    "id": 13,
+    "name": "Pedro",
+    "password": "ordep",
+    "isAdmin": false
+  },
+  {
+    "id": 14,
+    "name": "Tiit",
+    "password": "tiit",
+    "isAdmin": false
+  },
+  {
+    "id": 15,
+    "name": "Gloria",
+    "password": "airolg",
+    "isAdmin": true
+  },
+  {
+    "id": 16,
+    "name": "Ayman",
+    "password": "namya",
+    "isAdmin": true
   }
 ]
