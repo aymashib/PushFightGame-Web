@@ -5,8 +5,15 @@ nav a {
 nav a:nth-child(2) {
   border: solid;
 }
+main p{
+  text-align: left;
+}
 
-@media screen and (max-width: 600px) {
+img{
+  float: right;
+}
+
+@media screen and (max-width: 900px) {
   .container {
     width: 95%;
   }
@@ -20,4 +27,3 @@ nav a:nth-child(2) {
     width: 300px;
   }
 }
-

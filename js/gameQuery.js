@@ -1,404 +1,127 @@
-const leaderboardData = [
-    {
-        "id": 1,
-        "player": "Player1",
-        "games_played": 16,
-        "wins": 1,
-        "losses": 15,
-        "win_percentage": 6.25,
-        "avg_moves_won": 3,
-        "avg_duration_per_move": 2.828125,
-        "avg_duration_per_turn": 3.2315
-    },
-    {
-        "id": 2,
-        "player": "Player2",
-        "games_played": 14,
-        "wins": 13,
-        "losses": 1,
-        "win_percentage": 92.8571428571428571,
-        "avg_moves_won": 2,
-        "avg_duration_per_move": 1.7992857142857143,
-        "avg_duration_per_turn": 2.0533285714285714
-    },
-    {
-        "id": 3,
-        "_player": "Player1",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 4,
-        "player": "Player2",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 5,
-        "player": "Player1",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 6,
-        "player": "Player2",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 7,
-        "player": "Player1",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 8,
-        "player": "Player2",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 9,
-        "player": "Player1",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 10,
-        "player": "Player2",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 11,
-        "player": "Player1",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 12,
-        "player": "Player2",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 13,
-        "player": "Player1",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 14,
-        "player": "Player2",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 15,
-        "player": "Player1",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 16,
-        "player": "Player2",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 17,
-        "player": "Player1",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 18,
-        "player": "Player2",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 19,
-        "player": "Player1",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 20,
-        "player": "Player2",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 21,
-        "player": "Player1",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 22,
-        "player": "Player2",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 23,
-        "player": "Player1",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 24,
-        "player": "Player2",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 25,
-        "player": "Player1",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 26,
-        "player": "Player2",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 27,
-        "player": "Player1",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 28,
-        "player": "Player2",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 29,
-        "player": "Player1",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 30,
-        "player": "Player2",
-        "games_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "win_percentage": null,
-        "avg_moves_won": 0,
-        "avg_duration_per_move": null,
-        "avg_duration_per_turn": null
-    },
-    {
-        "id": 31,
-        "player": "AI_BOT",
-        "games_played": 2,
-        "wins": 2,
-        "losses": 0,
-        "win_percentage": 100,
-        "avg_moves_won": 2,
-        "avg_duration_per_move": 0,
-        "avg_duration_per_turn": 0.00335
-    }
-]
+import { gamesJSON } from "./db/db.js";
+import { usersJSON } from "./db/users.js";
 
-document.getElementById('searchButton').addEventListener('click', function() {
-    const formData = new FormData(document.getElementById('gameQueryForm'));
-    const queryParams = {};
-    formData.forEach((value, key) => {
-        queryParams[key] = value;
-    });
-    filterAndDisplayGameData(queryParams);
-});
+const games = gamesJSON;
+const users = usersJSON;
 
-function filterAndDisplayGameData(params) {
-    const filteredData = leaderboardData.filter(game => {
-        if (params.id && game.id != params.id) return false;
-        if (params.player && game.player && game.player.toLowerCase() !== params.player.toLowerCase()) return false;
-        if (params.win && !isNaN(parseInt(params.win)) && game.wins !== parseInt(params.win)) return false;
-        if (params.scores && !compareScore(game.scores, parseInt(params.scores), params.scoreComparison)) return false;
-        // Add more conditions as needed
-        return true;
-    });
+// Function to populate the player name field based on the current user
+function populatePlayerNameField() {
+    const currentUser = getCurrentUser();
+    const form_player_name = document.getElementById("player_name");
 
-    if (Object.values(params).every(value => value === '')) {
-        displayNotFoundMessage();
-    } else {
-        displayGameData(filteredData);
-    }
-}
-
-
-
-function displayGameData(data) {
-    const tableBody = document.getElementById('gameTableBody');
-    tableBody.innerHTML = '';
-    data.forEach(game => {
-        const row = document.createElement('tr');
-        let rowData = '';
-        for (const key in game) {
-            rowData += `<td>${game[key]}</td>`;
+    if (currentUser) {
+        if (!currentUser.isAdmin) {
+            // If the user is not an admin, populate and disable the player name field with the user's name
+            form_player_name.value = currentUser.name;
+            form_player_name.disabled = true; // Disable it for non-admin users
+        } else {
+            form_player_name.removeAttribute("disabled"); // Enable the field for admin
         }
-        row.innerHTML = rowData;
-        tableBody.appendChild(row);
-    });
+    }
 }
 
-document.getElementById('clearButton').addEventListener('click', function() {
-    // Clear all input fields
-    document.getElementById('id').value = '';
-    document.getElementById('player').value = '';
-    document.getElementById('score').value = '';
-    document.getElementById('scoreComparison').value = '';
-    document.getElementById('win').value = '';
-    document.getElementById('before').value = '';
-    document.getElementById('after').value = '';
 
-    // Trigger search with empty filters to display all data
-    filterAndDisplayGameData({});
+// Call the function to populate the player name field when the page loads
+window.onload = populatePlayerNameField;
+
+document.getElementById("queryForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let form_id = document.getElementById("id");
+    let form_player_name = document.getElementById("player_name");
+    let form_score = document.getElementById("score");
+    let form_score_comp = document.getElementById("scoreComparison");
+    let form_win = document.getElementById("win");
+    let form_date_before = document.getElementById("dateBefore");
+    let form_date_after = document.getElementById("dateAfter");
+
+    let filteredGames = games;
+    if (form_id.value !== "") {
+        let id = parseInt(form_id.value);
+        filteredGames = filteredGames.filter(game => game.id === id);
+    } else {
+        // Populating player name moved to the separate function
+        populatePlayerNameField();
+
+        if(form_player_name.value !== "") {
+            // Filter users with the provided player name
+            let usersWithName = users.filter(user => user.name === form_player_name.value);
+
+            // Filter games based on whether their player name matches any of the users
+            filteredGames = filteredGames.filter(game => {
+                return usersWithName.some(user => game.player_name === user.name);
+            });
+        }
+
+        if (form_win.checked) {
+            filteredGames = filteredGames.filter(game => game.winner === "W");
+        }
+
+        if (form_score.value !== "") {
+            let score = parseInt(form_score.value);
+
+            let compareMethod = {
+                "above": (game) => game.score > score,
+                "equal": (game) => game.score === score,
+                "below": (game) => game.score < score
+            }
+
+            filteredGames = filteredGames.filter(compareMethod[form_score_comp.value]);
+        }
+
+        if (form_date_before.value !== "") {
+            let dateBefore = new Date(form_date_before.value);
+            filteredGames = filteredGames.filter(game => (new Date(game.date)) < dateBefore);
+        }
+
+        if (form_date_after.value !== "") {
+            let dateAfter = new Date(form_date_after.value);
+            filteredGames = filteredGames.filter(game => (new Date(game.date)) > dateAfter);
+        }
+    }
+
+    let resultTable = document.getElementById("resultTable");
+
+    // Remove existing rows from the table
+    while (resultTable.rows.length > 1) {
+        resultTable.deleteRow(1);
+    }
+
+    // Populate the table with filtered data
+    filteredGames.forEach(game => {
+        let resultRow = resultTable.insertRow(-1);
+
+        let resultId = resultRow.insertCell(0);
+        resultId.textContent = game.id;
+
+        let resultPlayer = resultRow.insertCell(1);
+        resultPlayer.textContent = game.player_name;
+
+        let resultResult = resultRow.insertCell(2);
+        resultResult.textContent = game.winner === "W" ? "WON" : "LOST";
+
+        let resultScore = resultRow.insertCell(3);
+        resultScore.textContent = game.score;
+
+        let resultDate = resultRow.insertCell(4);
+        resultDate.textContent = game.date;
+    });
 });
 
-function displayNotFoundMessage() {
-    const tableBody = document.getElementById('gameTableBody');
-    tableBody.innerHTML = '<tr><td colspan="2">Not Found</td></tr>';
+
+function getCurrentUser() {
+    // Retrieve the current user from local storage
+    const storedUsername = window.localStorage.getItem('username');
+    const storedPassword = window.localStorage.getItem('password');
+
+    // Find the user in the users array based on the stored username and password
+    const currentUser = users.find(user => user.name === storedUsername && user.password === storedPassword);
+
+    if (currentUser) {
+        // Check if the user is an admin
+        const isAdmin = currentUser.isAdmin;
+        return { ...currentUser, isAdmin }; // Include isAdmin property in the returned object
+    } else {
+        return null;
+    }
 }
