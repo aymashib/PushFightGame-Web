@@ -1,5 +1,5 @@
-import { gamesJSON } from "./db/db_local.js";
-import { usersJSON } from "./db/users_local.js";
+import { gamesJSON } from "./db/db.js";
+import { usersJSON } from "./db/users.js";
 
 const games = gamesJSON;
 const users = usersJSON;
