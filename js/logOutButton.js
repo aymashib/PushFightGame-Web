@@ -25,14 +25,22 @@ function updateLoginButton() {
 
 updateLoginButton(); // Call the function when the page loads
 
-function updateLeadrBoardBtn(){
+function updateLeaderBoardBtn(){
     const LBbutton = document.getElementById("LBbtn");
 
     if (window.localStorage.getItem('loggedIn')){
         LBbutton.style.display = 'block';
     } else LBbutton.style.display = 'none';
 
+}
+updateLeaderBoardBtn();
+
+function updateFormBtn(){
+    const formButton = document.getElementById("Formbtn");
+
+    if (window.localStorage.getItem('loggedIn')){
+        formButton.style.display = 'block';
+    } else formButton.style.display = 'none';
 
 }
-
-updateLeadrBoardBtn()
+updateFormBtn();
