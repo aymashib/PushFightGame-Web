@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/form.css">
   <script src="../js/logOutButton.js" type="module"></script>
+  <script src="../js/sortTable.js" type="module"></script> <!-- Added table sorting script -->
 </head>
 <body>
 
@@ -70,7 +71,21 @@
 </fieldset>
 
 <table id="resultTable">
-  <tr><th>ID</th><th>Player</th><th>Result</th><th>Score</th><th>Date</th></tr>
+  <tr>
+    <th>ID</th>
+    <th>
+      Player
+      <button id="sortPlayer" class="sort-button">▼</button>
+    </th>
+    <th>
+      Result
+    </th>
+    <th>
+      Score
+      <button id="sortScore" class="sort-button">▼</button>
+    </th>
+    <th>Date</th>
+  </tr>
 </table>
 
 </body>

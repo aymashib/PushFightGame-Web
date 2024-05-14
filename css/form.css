@@ -143,3 +143,7 @@ select::-webkit-scrollbar-thumb {
 input, select, option {
   color: rosybrown; /* Rosybrown color for input, select, and option text */
 }
+
+th.sorted {
+  background-color: #ddd; /* grey background for currently sorted column */
+}

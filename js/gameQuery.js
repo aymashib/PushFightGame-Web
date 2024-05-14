@@ -80,44 +80,34 @@ document.getElementById("queryForm").addEventListener("submit", (e) => {
         }
     }
 
-    // Todo: Maybe not replace but instead update the table instead...
-    let resultTable = document.createElement("table");
-    resultTable.id = "resultTable";
-    resultTable.innerHTML = "<tr><th>id</th><th>Player</th><th>Result</th><th>Score</th><th>Date</th></tr>";
+    let resultTable = document.getElementById("resultTable");
 
-    filteredGames.forEach(game => {
-        let resultRow = document.createElement("tr");
-
-        let resultId = document.createElement("td");
-        resultId.textContent = game.id;
-        resultRow.appendChild(resultId);
-
-        let resultPlayer = document.createElement("td");
-        resultPlayer.textContent = game.player_name;
-        resultRow.appendChild(resultPlayer);
-
-        let resultResult = document.createElement("td");
-        resultResult.textContent = game.winner === "W" ? "WON" : "LOST";
-        resultRow.appendChild(resultResult);
-
-        let resultScore = document.createElement("td");
-        resultScore.textContent = game.score;
-        resultRow.appendChild(resultScore);
-
-        let resultDate = document.createElement("td");
-        resultDate.textContent = game.date;
-        resultRow.appendChild(resultDate);
-
-        resultTable.appendChild(resultRow);
-    });
-
-    let existingTable = document.getElementById("resultTable");
-    if (existingTable) {
-        existingTable.replaceWith(resultTable);
-    } else {
-        document.body.appendChild(resultTable);
+    // Remove existing rows from the table
+    while (resultTable.rows.length > 1) {
+        resultTable.deleteRow(1);
     }
+
+    // Populate the table with filtered data
+    filteredGames.forEach(game => {
+        let resultRow = resultTable.insertRow(-1);
+
+        let resultId = resultRow.insertCell(0);
+        resultId.textContent = game.id;
+
+        let resultPlayer = resultRow.insertCell(1);
+        resultPlayer.textContent = game.player_name;
+
+        let resultResult = resultRow.insertCell(2);
+        resultResult.textContent = game.winner === "W" ? "WON" : "LOST";
+
+        let resultScore = resultRow.insertCell(3);
+        resultScore.textContent = game.score;
+
+        let resultDate = resultRow.insertCell(4);
+        resultDate.textContent = game.date;
+    });
 });
+
 
 function getCurrentUser() {
     // Retrieve the current user from local storage
