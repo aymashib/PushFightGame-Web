@@ -12,11 +12,11 @@ function sortTable(columnIndex, buttonId) {
     const rows = Array.from(tbody.querySelectorAll("tr"));
     const button = document.getElementById(buttonId);
 
-    // Get the sorting order (ascending or descending)
-    let ascending = true;
-    if (table.dataset.sortedColumn === columnIndex.toString()) {
-        ascending = !(table.dataset.ascending === "true");
-    }
+    // Get the sorting order (ascending or descending) based on the button's current text content
+    let ascending = button.textContent === '▼';
+
+    // Invert sorting order
+    ascending = !ascending;
 
     // Update sort button visuals
     const sortButtons = document.querySelectorAll(".sort-button");
@@ -32,7 +32,14 @@ function sortTable(columnIndex, buttonId) {
         const valueA = rowA.cells[columnIndex].textContent;
         const valueB = rowB.cells[columnIndex].textContent;
 
-        return ascending ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
+        // For player names (strings), use localeCompare
+        if (columnIndex === 1) {
+            return ascending ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
+        } else if (columnIndex === 3) { // For scores (integers), convert to numbers and compare
+            const numA = parseInt(valueA);
+            const numB = parseInt(valueB);
+            return ascending ? numA - numB : numB - numA;
+        }
     });
 
     // Create a new tbody element
@@ -41,7 +48,14 @@ function sortTable(columnIndex, buttonId) {
     // Append sorted rows to the new tbody
     rows.forEach(row => newTbody.appendChild(row));
 
-    // Replace the existing tbody with the new one
-    table.replaceChild(newTbody, tbody);
+    // Remove existing tbody from the table
+    table.removeChild(tbody);
+
+    // Append the sorted tbody to the table
+    table.appendChild(newTbody);
 }
+
+
+
+
 
