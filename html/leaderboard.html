@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <head>
   <link rel="icon" href="/media/icon.png" />
   <title>Leaderboard</title>
@@ -7,19 +8,6 @@
   <link rel="stylesheet" href="../css/leaderboard.css" />
   <script src="../js/logOutButton.js" type="module"></script>
   <script type="module" src="../js/db/dbData.js"></script>
-  <script>
-    function populateTable() {
-      const tableBody = document.getElementById("userData");
-      usersJSON.forEach(user => {
-        const row = document.createElement('tr');
-        Object.values(user).forEach(value => {
-          const cell = document.createElement('td');
-          cell.textContent = value;
-          row.appendChild(cell);
-        });
-        tableBody.appendChild(row);
-      });
-    }
 
     document.addEventListener('DOMContentLoaded', function() {
       populateTable();

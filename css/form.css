@@ -1,0 +1,145 @@
+/* CSS for making labels under the fieldset white */
+fieldset label {
+  color: white;
+}
+
+/* CSS for using rosybrown color accents */
+.new-contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8%;
+}
+
+.new-contact-title {
+  margin-bottom: 10px;
+}
+
+.new-contact-info-title {
+  margin-top: 22px;
+  margin-bottom: 15px;
+}
+
+.new-contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.new-contact-message-title {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.new-contact-form input,
+.new-contact-form textarea {
+  margin-bottom: 35px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.new-contact-submit-button {
+  width: 100%;
+  max-width: 300px;
+}
+.new-contact-submit-button:hover {
+  background-color: rgb(203, 4, 45);
+  color: whitesmoke;
+}
+
+nav a:nth-child(9) {
+  border: solid;
+}
+
+#resultTable {
+  border: 1px solid rosybrown; /* Rosybrown border */
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#resultTable th,
+#resultTable td {
+  border: 1px solid rosybrown; /* Rosybrown border */
+  padding: 8px;
+  text-align: left;
+}
+
+fieldset,
+form,
+table {
+  color: rosybrown; /* Rosybrown color for text */
+}
+
+input,
+select {
+  background-color: transparent;
+  color: rosybrown; /* Rosybrown color for text */
+  outline: none;
+}
+
+form label {
+  font-size: 16px;
+  color: rosybrown; /* Rosybrown color for labels */
+}
+
+#resultTable {
+  color: rosybrown; /* Rosybrown color for table text */
+}
+
+#resultTable th {
+  background-color: rosybrown; /* Rosybrown background for table headers */
+}
+
+#dateBefore::-webkit-calendar-picker-indicator,
+#dateAfter::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Invert the calendar picker icon color */
+}
+
+.currentButton {
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  background-color: rosybrown; /* Rosybrown background for buttons */
+  color: rosybrown; /* Rosybrown color for button text */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none; /* Remove text decoration */
+}
+
+.navigation ul li button.currentButton {
+  background-color: rosybrown; /* Rosybrown background for current button in navigation */
+  color: rosybrown; /* Rosybrown color for current button text */
+}
+
+/* Style the hover effect for the navigation buttons */
+.navigation ul li button:hover {
+  background-color: rosybrown; /* Rosybrown background for navigation button hover */
+  color: rosybrown; /* Rosybrown color for navigation button hover text */
+}
+
+#Statistics-button:hover {
+  background-color: rosybrown; /* Rosybrown background for Statistics button hover */
+  color: rosybrown; /* Rosybrown color for Statistics button hover text */
+}
+
+/* Remove white space on select dropdown */
+select {
+  padding: 0;
+  margin: 0;
+}
+
+/* Set transparent background for select dropdown arrow */
+select::-ms-expand {
+  display: none;
+}
+
+select::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+select::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+input, select, option {
+  color: rosybrown; /* Rosybrown color for input, select, and option text */
+}
