@@ -43,6 +43,16 @@ document.getElementById("queryForm").addEventListener("submit", (e) => {
         // Populating player name moved to the separate function
         populatePlayerNameField();
 
+        if(form_player_name.value !== "") {
+            // Filter users with the provided player name
+            let usersWithName = users.filter(user => user.name === form_player_name.value);
+
+            // Filter games based on whether their player name matches any of the users
+            filteredGames = filteredGames.filter(game => {
+                return usersWithName.some(user => game.player_name === user.name);
+            });
+        }
+
         if (form_win.checked) {
             filteredGames = filteredGames.filter(game => game.winner === "W");
         }
@@ -68,6 +78,44 @@ document.getElementById("queryForm").addEventListener("submit", (e) => {
             let dateAfter = new Date(form_date_after.value);
             filteredGames = filteredGames.filter(game => (new Date(game.date)) > dateAfter);
         }
+    }
+
+    // Todo: Maybe not replace but instead update the table instead...
+    let resultTable = document.createElement("table");
+    resultTable.id = "resultTable";
+    resultTable.innerHTML = "<tr><th>id</th><th>Player</th><th>Result</th><th>Score</th><th>Date</th></tr>";
+
+    filteredGames.forEach(game => {
+        let resultRow = document.createElement("tr");
+
+        let resultId = document.createElement("td");
+        resultId.textContent = game.id;
+        resultRow.appendChild(resultId);
+
+        let resultPlayer = document.createElement("td");
+        resultPlayer.textContent = game.player_name;
+        resultRow.appendChild(resultPlayer);
+
+        let resultResult = document.createElement("td");
+        resultResult.textContent = game.winner === "W" ? "WON" : "LOST";
+        resultRow.appendChild(resultResult);
+
+        let resultScore = document.createElement("td");
+        resultScore.textContent = game.score;
+        resultRow.appendChild(resultScore);
+
+        let resultDate = document.createElement("td");
+        resultDate.textContent = game.date;
+        resultRow.appendChild(resultDate);
+
+        resultTable.appendChild(resultRow);
+    });
+
+    let existingTable = document.getElementById("resultTable");
+    if (existingTable) {
+        existingTable.replaceWith(resultTable);
+    } else {
+        document.body.appendChild(resultTable);
     }
 });
 
