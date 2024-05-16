@@ -68,7 +68,8 @@ nav a:hover {
   background-color: rosybrown;
 }
 
-.menu-icon {
+.menu-icon,
+.menu-toggle{
   display: none;
 }
 
