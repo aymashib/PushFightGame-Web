@@ -4,11 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.*;
 
-import static updater.lib.lib.*;
+import static updater.lib.*;
 
 public class userUpdater {
     public static void main(String[] args) {

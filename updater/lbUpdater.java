@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.*;
 
-import static updater.lib.lib.*;
+import static updater.lib.*;
 
 public class lbUpdater {
     public static void main(String[] args) {
@@ -21,10 +21,10 @@ public class lbUpdater {
                         "COUNT(DISTINCT g.game_id) AS games_played, " +
                         "SUM(CASE WHEN g.winner THEN 1 ELSE 0 END) AS wins, " +
                         "SUM(CASE WHEN NOT g.winner THEN 1 ELSE 0 END) AS losses, " +
-                        "(SUM(CASE WHEN g.winner THEN 1 ELSE 0 END) * 100.0 / NULLIF(COUNT(DISTINCT g.game_id), 0)) AS win_percentage, " +
+                        "ROUND((SUM(CASE WHEN g.winner THEN 1 ELSE 0 END) * 100.0 / NULLIF(COUNT(DISTINCT g.game_id), 0)), 2) AS win_percentage, " +
                         "COALESCE(AVG(CASE WHEN g.winner THEN g.nr_of_movements ELSE NULL END), 0) AS avg_moves_won, " +
                         "AVG(g.avg_duration_per_move) AS avg_duration_per_move, " +
-                        "AVG(g.avg_duration_per_turn) AS avg_duration_per_turn " +
+                        "ROUND(AVG(g.avg_duration_per_turn),2) AS avg_duration_per_turn " +
                         "FROM " +
                         "player p " +
                         "LEFT JOIN " +

@@ -5,8 +5,6 @@ const users = usersJSON; // Make sure userJSON is defined or remove this line if
 // Get the form element
 const form = document.querySelector('form');
 
-
-
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // Prevent the default form submission
 

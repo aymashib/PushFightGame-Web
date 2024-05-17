@@ -94,5 +94,77 @@ export const usersJSON = [
     "name": "Ayman",
     "password": "namya",
     "isAdmin": true
+  },
+  {
+    "id": 17,
+    "name": "Tom",
+    "password": "mot",
+    "isAdmin": false
+  },
+  {
+    "id": 18,
+    "name": "Jerry",
+    "password": "yrrej",
+    "isAdmin": false
+  },
+  {
+    "id": 19,
+    "name": "Egert",
+    "password": "trege",
+    "isAdmin": false
+  },
+  {
+    "id": 20,
+    "name": "Simon",
+    "password": "nomis",
+    "isAdmin": false
+  },
+  {
+    "id": 21,
+    "name": "Olev",
+    "password": "velo",
+    "isAdmin": false
+  },
+  {
+    "id": 22,
+    "name": "safa123",
+    "password": "321afas",
+    "isAdmin": false
+  },
+  {
+    "id": 23,
+    "name": "markus456",
+    "password": "654sukram",
+    "isAdmin": false
+  },
+  {
+    "id": 24,
+    "name": "Cas",
+    "password": "sac",
+    "isAdmin": true
+  },
+  {
+    "id": 25,
+    "name": "Markus",
+    "password": "sukram",
+    "isAdmin": true
+  },
+  {
+    "id": 26,
+    "name": "Player2",
+    "password": "2reyalp",
+    "isAdmin": false
+  },
+  {
+    "id": 27,
+    "name": "Tore",
+    "password": "erot",
+    "isAdmin": false
+  },
+  {
+    "id": 28,
+    "name": "Tere",
+    "password": "eret",
+    "isAdmin": false
   }
 ]
