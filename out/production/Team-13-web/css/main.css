@@ -20,6 +20,11 @@ main {
   width: 97%;
   margin: 0 auto;
 }
+textarea{
+  align-content: center;
+  align-items: center;
+  height: 20px;
+}
 
 nav a {
   text-decoration: none;
@@ -65,11 +70,12 @@ nav a:hover {
 
 input,
 .menu-icon {
-  display: none;
+  /*display: none;*/
 }
 
+
 /*interactive nav*/
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 880px) {
   nav {
     display: none;
   }

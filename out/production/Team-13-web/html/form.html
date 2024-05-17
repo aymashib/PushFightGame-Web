@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Query</title>
+  <script src="../js/gameQuery.js" type="module"></script>
+  <link rel="icon" href="/media/icon.png" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/form.css">
+  <script src="../js/logOutButton.js" type="module"></script>
+  <script src="../js/sortTable.js" type="module"></script> <!-- Added table sorting script -->
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <marquee>Join our community and get the game for FREE!</marquee>
+    <h1>Push Fight</h1>
+    <span id="welcomeMessage"></span>
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <input type="checkbox" id="menu-toggle" />
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="rules.html">Rules</a>
+      <a href="leaderboard.html" id="LBbtn">Leaderboard</a>
+      <a href="statistics.html">Statistics</a>
+      <a href="team.html">Team</a>
+      <a href="download.html">Download</a>
+      <a href="contact.html">Contact</a>
+      <a href="form.html" id="Formbtn">Search Game</a>
+      <a href="login.html" id="loginButton">Login</a>
+    </nav>
+  </div>
+</header>
+<fieldset>
+  <form id="queryForm">
+    <div>
+      <label for="id">ID</label>
+      <input type="number" id="id" name="id">
+    </div>
+    <div>
+      <label for="player_name">Player name</label>
+      <input type="text" id="player_name" name="player_name"><!-- make the necessary adjustments if necessary for it -->
+    </div>
+    <div>
+      <label for="score">Score</label>
+      <input type="number" id="score" name="score">
+      <label for="scoreComparison">Comparison:</label>
+      <select id="scoreComparison" name="scoreComparison">
+        <option value="above">Above</option>
+        <option value="equal">Equal</option>
+        <option value="below">Below</option>
+      </select>
+    </div>
+    <div>
+      <label for="win">Win</label>
+      <input type="checkbox" id="win" name="win">
+    </div>
+    <div>
+      <label for="dateBefore">Before</label>
+      <input type="date" id="dateBefore" name="dateBefore">
+      <label for="dateAfter">After</label>
+      <input type="date" id="dateAfter" name="dateAfter">
+    </div>
+    <div>
+      <input type="submit" id="search" value="Search">
+    </div>
+  </form>
+</fieldset>
+
+<table id="resultTable">
+  <tr>
+    <th>ID</th>
+    <th>
+      Player
+      <button id="sortPlayer" class="sort-button">▼</button>
+    </th>
+    <th>
+      Result
+    </th>
+    <th>
+      Score
+      <button id="sortScore" class="sort-button">▼</button>
+    </th>
+    <th>Date</th>
+  </tr>
+</table>
+
+</body>
+</html>

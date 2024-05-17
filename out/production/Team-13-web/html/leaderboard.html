@@ -7,24 +7,6 @@
   <link rel="stylesheet" href="../css/leaderboard.css" />
   <script src="../js/logOutButton.js" type="module"></script>
   <script type="module" src="../js/db/dbData.js"></script>
-  <script>
-    function populateTable() {
-      const tableBody = document.getElementById("userData");
-      usersJSON.forEach(user => {
-        const row = document.createElement('tr');
-        Object.values(user).forEach(value => {
-          const cell = document.createElement('td');
-          cell.textContent = value;
-          row.appendChild(cell);
-        });
-        tableBody.appendChild(row);
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      populateTable();
-    });
-  </script>
 </head>
 <body>
 <!--menubar start-->
@@ -45,6 +27,7 @@
       <a href="team.html">Team</a>
       <a href="download.html">Download</a>
       <a href="contact.html">Contact</a>
+      <a href="form.html" id="Formbtn">Search Game</a>
       <a href="login.html" id="loginButton">Login</a>
     </nav>
   </div>
