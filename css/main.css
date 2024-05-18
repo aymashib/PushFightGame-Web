@@ -137,6 +137,9 @@ h1:hover {
   color: rgb(203, 4, 45);
   transition: 1s;
 }
+.copyright-footer{
+  margin-top: 50px;
+}
 
 footer div {
   bottom: 0;

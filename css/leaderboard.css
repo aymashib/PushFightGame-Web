@@ -10,6 +10,10 @@ caption {
   padding-top: 15px;
 }
 
+#menu-toggle {
+  display: none; /* Hide checkbox */
+}
+
 table {
   width: 100%;
   margin: 0 auto;
