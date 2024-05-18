@@ -1,4 +1,4 @@
-package updater;
+package updater.lib;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -23,4 +23,6 @@ public class lib {
         return null;
     }
 }
+
+
 

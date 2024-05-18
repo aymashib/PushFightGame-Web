@@ -8,13 +8,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.*;
 
-import static updater.lib.*;
+import static updater.lib.lib.*;
 
 public class userUpdater {
     public static void main(String[] args) {
         String[] admins = {"Markus", "Ivan", "Ayman", "Gloria", "Cas", "Huseyin"};
 
-        try(FileWriter out = new FileWriter("js/users.js")){
+        try(FileWriter out = new FileWriter("js/db/users.js")){
             try (Connection connection = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD)){
                 String query = "SELECT player_id, player_name FROM player";
                 PreparedStatement statement = connection.prepareStatement(query);

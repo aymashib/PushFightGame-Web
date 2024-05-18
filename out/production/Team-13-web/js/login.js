@@ -1,4 +1,4 @@
-import { usersJSON } from "../db/users.js";
+import { usersJSON } from "./db/users.js";
 
 const users = usersJSON; // Make sure userJSON is defined or remove this line if not needed
 
@@ -26,10 +26,10 @@ form.addEventListener('submit', (e) => {
         window.localStorage.setItem('password', enteredPassword);
 
         window.localStorage.setItem('loggedIn', 'true');
-        window.location.href = '../html/contact.html';
+        window.location.href = '../html/home.html';
     } else {
 // Login failed
-        alert('Invalid username, password, or email');
+        alert('Invalid username or password');
 
     }
 });

@@ -1,210 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="icon" href="/media/icon.png" />
-    <title>Leaderboard</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/leaderboard.css" />
-  </head>
-  <body>
-    <!--menubar start-->
-    <header>
-      <div class="container">
-        <div class="marquee-container">
-          <marquee>Join our community and get the game for FREE!</marquee>
-        </div>
-        <h1>Push Fight</h1>
-        <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
-        <nav>
-          <a href="../index.html">Home</a>
-          <a href="rules.html">Rules</a>
-          <a href="leaderboard.html">Leaderboard</a>
-          <a href="statistics.html">Statistics</a>
-          <a href="team.html">Team</a>
-          <a href="download.html">Download</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-    </header>
+<head>
+  <link rel="icon" href="/media/icon.png" />
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/leaderboard.css" />
+  <script src="../js/logOutButton.js" type="module"></script>
+  <script type="module" src="../js/db/dbData.js"></script>
+  <script>
+    function populateTable() {
+      const tableBody = document.getElementById("userData");
+      usersJSON.forEach(user => {
+        const row = document.createElement('tr');
+        Object.values(user).forEach(value => {
+          const cell = document.createElement('td');
+          cell.textContent = value;
+          row.appendChild(cell);
+        });
+        tableBody.appendChild(row);
+      });
+    }
 
-    <main>
-      <table>
-        <div class="caption-container">
-          <caption>
-            Leaderboard
-          </caption>
-        </div>
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Player</th>
-            <th>Scores</th>
-            <th>Moves</th>
-            <th>Average Turns</th>
-            <th>Games Played</th>
-            <th>Wins</th>
-            <th>Loses</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>#1</td>
-            <td>John Smith</td>
-            <td>98</td>
-            <td>9</td>
-            <td>8</td>
-            <td>5</td>
-            <td>5</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>#2</td>
-            <td>Emily Johnson</td>
-            <td>92</td>
-            <td>10</td>
-            <td>9</td>
-            <td>4</td>
-            <td>4</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>#3</td>
-            <td>Michael Williams</td>
-            <td>87</td>
-            <td>12</td>
-            <td>9</td>
-            <td>9</td>
-            <td>7</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>#4</td>
-            <td>Sarah Brown</td>
-            <td>85</td>
-            <td>15</td>
-            <td>12</td>
-            <td>7</td>
-            <td>4</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>#5</td>
-            <td>David Jones</td>
-            <td>82</td>
-            <td>19</td>
-            <td>20</td>
-            <td>11</td>
-            <td>6</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>#6</td>
-            <td>Emma Taylor</td>
-            <td>78</td>
-            <td>19</td>
-            <td>21</td>
-            <td>10</td>
-            <td>5</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>#7</td>
-            <td>Christopher Martinez</td>
-            <td>76</td>
-            <td>20</td>
-            <td>22</td>
-            <td>15</td>
-            <td>9</td>
-            <td>6</td>
-          </tr>
-          <tr>
-            <td>#8</td>
-            <td>Olivia Garcia</td>
-            <td>73</td>
-            <td>21</td>
-            <td>22</td>
-            <td>16</td>
-            <td>8</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>#9</td>
-            <td>Matthew Miller</td>
-            <td>69</td>
-            <td>21</td>
-            <td>23</td>
-            <td>5</td>
-            <td>2</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>#10</td>
-            <td>Sophia Davis</td>
-            <td>65</td>
-            <td>25</td>
-            <td>23</td>
-            <td>7</td>
-            <td>4</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>#11</td>
-            <td>Ethan Anderson</td>
-            <td>61</td>
-            <td>25</td>
-            <td>25</td>
-            <td>23</td>
-            <td>13</td>
-            <td>10</td>
-          </tr>
-          <tr>
-            <td>#12</td>
-            <td>Ava Wilson</td>
-            <td>57</td>
-            <td>25</td>
-            <td>25</td>
-            <td>6</td>
-            <td>2</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>#13</td>
-            <td>Alexander Thomas</td>
-            <td>53</td>
-            <td>24</td>
-            <td>24</td>
-            <td>31</td>
-            <td>6</td>
-            <td>26</td>
-          </tr>
-          <tr>
-            <td>#14</td>
-            <td>Mia White</td>
-            <td>49</td>
-            <td>22</td>
-            <td>26</td>
-            <td>12</td>
-            <td>2</td>
-            <td>10</td>
-          </tr>
-          <tr>
-            <td>#15</td>
-            <td>William Lee</td>
-            <td>45</td>
-            <td>26</td>
-            <td>27</td>
-            <td>19</td>
-            <td>2</td>
-            <td>17</td>
-          </tr>
-        </tbody>
-      </table>
-    </main>
-    <footer>
-      <div>
-        <p>Copyright &copy; 2023 - 2024 Team13&copy;. All rights reserved.</p>
-      </div>
-    </footer>
-  </body>
+    document.addEventListener('DOMContentLoaded', function() {
+      populateTable();
+    });
+  </script>
+</head>
+<body>
+<!--menubar start-->
+<header>
+  <div class="container">
+    <div class="marquee-container">
+      <marquee>Join our community and get the game for FREE!</marquee>
+    </div>
+    <h1>Push Fight</h1>
+    <span id="welcomeMessage"></span>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="rules.html">Rules</a>
+      <a href="leaderboard.html" id="LBbtn">Leaderboard</a>
+      <a href="statistics.html">Statistics</a>
+      <a href="team.html">Team</a>
+      <a href="download.html">Download</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" id="loginButton">Login</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <table>
+    <div class="caption-container">
+      <caption>
+        Leaderboard
+      </caption>
+    </div>
+    <thead>
+    <tr>
+      <th>Player ID</th>
+      <th>Name</th>
+      <th>Played Games</th>
+      <th>Wins</th>
+      <th>Losses</th>
+      <th>Win Percentage</th>
+      <th>Avg Moves Won</th>
+      <th>Avg Duration per Move</th>
+      <th>Avg Duration per Turn</th>
+    </tr>
+    </thead>
+    <tbody id="userData">
+    <!-- Data will be appended here -->
+    </tbody>
+  </table>
+
+</main>
+<footer>
+  <div>
+    <p>Copyright &copy; 2023 - 2024 Team13&copy;. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+
+</body>
 </html>
