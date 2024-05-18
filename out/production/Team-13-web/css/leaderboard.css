@@ -15,6 +15,11 @@ table {
   margin: 0 auto;
 }
 
+body,
+main{
+  overflow-x: auto;
+}
+
 
 tr {
   text-align: center;
