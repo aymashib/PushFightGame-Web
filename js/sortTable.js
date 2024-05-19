@@ -1,10 +1,17 @@
-document.getElementById("sortPlayer").addEventListener("click", () => {
-    sortTable(1, "sortPlayer"); // Sort based on player column
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("sortPlayer").addEventListener("click", () => {
+        sortTable(1, "sortPlayer");
+    });
+
+    document.getElementById("sortScore").addEventListener("click", () => {
+        sortTable(3, "sortScore");
+    });
 });
 
-document.getElementById("sortScore").addEventListener("click", () => {
-    sortTable(3, "sortScore"); // Sort based on score column
-});
+let sortState = {
+    column: null,
+    ascending: true
+};
 
 function sortTable(columnIndex, buttonId) {
     const table = document.getElementById("resultTable");
@@ -12,50 +19,37 @@ function sortTable(columnIndex, buttonId) {
     const rows = Array.from(tbody.querySelectorAll("tr"));
     const button = document.getElementById(buttonId);
 
-    // Get the sorting order (ascending or descending) based on the button's current text content
-    let ascending = button.textContent === '▼';
+    // Determine the sorting order
+    if (sortState.column === columnIndex) {
+        sortState.ascending = !sortState.ascending; // Toggle sorting order
+    } else {
+        sortState.column = columnIndex;
+        sortState.ascending = true; // Default to ascending if a new column is sorted
+    }
 
-    // Invert sorting order
-    ascending = !ascending;
-
-    // Update sort button visuals
+    // Update the button text content
     const sortButtons = document.querySelectorAll(".sort-button");
-    sortButtons.forEach(btn => btn.textContent = '▼'); // Reset all buttons
-    button.textContent = ascending ? '▼' : '▲';
+    sortButtons.forEach(btn => btn.textContent = '▼');
+    button.textContent = sortState.ascending ? '▲' : '▼';
 
-    // Set the dataset attributes for tracking sorted column and order
-    table.dataset.sortedColumn = columnIndex;
-    table.dataset.ascending = ascending;
-
-    // Sort the rows based on the column values
+    // Sort rows based on the column values
     rows.sort((rowA, rowB) => {
-        const valueA = rowA.cells[columnIndex].textContent;
-        const valueB = rowB.cells[columnIndex].textContent;
+        const valueA = rowA.cells[columnIndex].textContent.trim();
+        const valueB = rowB.cells[columnIndex].textContent.trim();
 
-        // For player names (strings), use localeCompare
-        if (columnIndex === 1) {
-            return ascending ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
-        } else if (columnIndex === 3) { // For scores (integers), convert to numbers and compare
-            const numA = parseInt(valueA);
-            const numB = parseInt(valueB);
-            return ascending ? numA - numB : numB - numA;
+        if (columnIndex === 1) { // Player names (strings)
+            return sortState.ascending ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
+        } else if (columnIndex === 3) { // Scores (integers)
+            const numA = parseInt(valueA, 10);
+            const numB = parseInt(valueB, 10);
+            return sortState.ascending ? numA - numB : numB - numA;
         }
     });
 
-    // Create a new tbody element
-    const newTbody = document.createElement('tbody');
+    // Remove existing rows and re-append sorted rows
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
 
-    // Append sorted rows to the new tbody
-    rows.forEach(row => newTbody.appendChild(row));
-
-    // Remove existing tbody from the table
-    table.removeChild(tbody);
-
-    // Append the sorted tbody to the table
-    table.appendChild(newTbody);
+    rows.forEach(row => tbody.appendChild(row));
 }
-
-
-
-
-

@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/form.css">
   <script src="../js/logOutButton.js" type="module"></script>
-  <script src="../js/sortTable.js" type="module"></script> <!-- Added table sorting script -->
   <script src="../js/gameQuery.js" type="module"></script>
+  <script src="../js/sortTable.js" type="module"></script>
 </head>
 <body>
 
@@ -70,6 +70,7 @@
 </fieldset>
 
 <table id="resultTable">
+  <thead>
   <tr>
     <th>ID</th>
     <th>
@@ -85,6 +86,10 @@
     </th>
     <th>Date</th>
   </tr>
+  </thead>
+  <tbody>
+  <!-- Table rows will be inserted here -->
+  </tbody>
 </table>
 
 <footer>
