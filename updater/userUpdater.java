@@ -13,7 +13,7 @@ import static updater.lib.*;
 
 public class userUpdater {
     public static void main(String[] args) {
-        String[] admins = {"Markus", "Ivan", "Ayman", "Gloria", "Cas", "Huseyin"};
+        String[] admins = {"Markus", "Ivan", "Ayman", "Gloria", "Cas", "Safa"};
 
         try(FileWriter out = new FileWriter("js/db/users.js")){
             try (Connection connection = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD)){

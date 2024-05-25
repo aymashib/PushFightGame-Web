@@ -3,7 +3,7 @@ export const usersJSON = [
     "id": 1,
     "name": "Safa",
     "password": "afas",
-    "isAdmin": false
+    "isAdmin": true
   },
   {
     "id": 2,

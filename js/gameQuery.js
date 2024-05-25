@@ -81,26 +81,50 @@ function updateResultTable(filteredGames) {
         tbody.removeChild(tbody.firstChild);
     }
 
-    // Populate the table with filtered data
+    // Populate the table with filtered data and add delete button to each row
     filteredGames.forEach(game => {
         const resultRow = tbody.insertRow();
-
-        const resultId = resultRow.insertCell(0);
-        resultId.textContent = game.id;
-
-        const resultPlayer = resultRow.insertCell(1);
-        resultPlayer.textContent = game.player_name;
-
-        const resultResult = resultRow.insertCell(2);
-        resultResult.textContent = game.winner === "W" ? "WON" : "LOST";
-
-        const resultScore = resultRow.insertCell(3);
-        resultScore.textContent = game.score;
-
-        const resultDate = resultRow.insertCell(4);
-        resultDate.textContent = game.date;
+        populateCells(resultRow, game);
+        addDeleteButton(resultRow, game, filteredGames);
     });
 }
+
+function populateCells(row, game) {
+    // Populate cells with game data
+    const resultId = row.insertCell();
+    resultId.textContent = game.id;
+
+    const resultPlayer = row.insertCell();
+    resultPlayer.textContent = game.player_name;
+
+    const resultResult = row.insertCell();
+    resultResult.textContent = game.winner === "W" ? "WON" : "LOST";
+
+    const resultScore = row.insertCell();
+    resultScore.textContent = game.score;
+
+    const resultDate = row.insertCell();
+    resultDate.textContent = game.date;
+}
+
+function addDeleteButton(row, game, filteredGames) {
+    // Add delete button cell
+    const deleteCell = row.insertCell();
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.classList.add("delete-button");
+    deleteButton.addEventListener("click", () => {
+        // Remove the corresponding game from the games array
+        const index = filteredGames.indexOf(game);
+        if (index !== -1) {
+            filteredGames.splice(index, 1);
+            // Update the table after deleting the row
+            updateResultTable(filteredGames);
+        }
+    });
+    deleteCell.appendChild(deleteButton);
+}
+
 
 function getCurrentUser() {
     const storedUsername = window.localStorage.getItem('username');

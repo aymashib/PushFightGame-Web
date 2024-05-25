@@ -147,3 +147,24 @@ input, select, option {
 th.sorted {
   background-color: #ddd; /* grey background for currently sorted column */
 }
+
+/* CSS for delete button */
+.delete-button {
+  background-color: rosybrown;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+/*!* CSS for highlighting sorted column header *!
+#resultTable th.sorted {
+  background-color: #ddd; !* Grey background for currently sorted column *!
+}*/
+
+
