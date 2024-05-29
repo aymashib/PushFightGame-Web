@@ -88,3 +88,7 @@ footer p {
     animation: flash 2s infinite;
     bottom: 0;
 }
+a:hover{
+   font-weight: bold;
+    text-decoration-line: underline;
+}
