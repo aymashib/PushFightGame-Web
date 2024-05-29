@@ -167,4 +167,28 @@ th.sorted {
   background-color: #ddd; !* Grey background for currently sorted column *!
 }*/
 
+#refreshButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#refreshButton img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Add vertical and horizontal spacing between the elements of the fieldset */
+fieldset div {
+  margin-bottom: 10px; /* Adjust this value to control vertical spacing */
+}
+
+fieldset div label,
+fieldset div input,
+fieldset div select,
+fieldset div button {
+  margin-right: 5px; /* Adjust this value to control horizontal spacing */
+}
+
+
 
