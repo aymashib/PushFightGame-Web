@@ -1,3 +1,4 @@
+<!-- form.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +9,8 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/form.css">
   <script src="../js/logOutButton.js" type="module"></script>
-  <script src="../js/sortTable.js" type="module"></script> <!-- Added table sorting script -->
   <script src="../js/gameQuery.js" type="module"></script>
+  <script src="../js/sortTable.js" type="module"></script>
 </head>
 <body>
 
@@ -33,6 +34,7 @@
     </nav>
   </div>
 </header>
+
 <fieldset>
   <form id="queryForm">
     <div>
@@ -41,7 +43,7 @@
     </div>
     <div>
       <label for="player_name">Player name</label>
-      <input type="text" id="player_name" name="player_name"><!-- make the necessary adjustments if necessary for it -->
+      <input type="text" id="player_name" name="player_name">
     </div>
     <div>
       <label for="score">Score</label>
@@ -63,29 +65,40 @@
       <label for="dateAfter">After</label>
       <input type="date" id="dateAfter" name="dateAfter">
     </div>
-    <div>
+    <div class="buttons-container">
       <input type="submit" id="search" value="Search">
-    </div>
-  </form>
+      <button type="button" id="refreshButton">
+        <img src="../media/refresh-icon-pushfight.png" alt="Refresh">
+      </button>
+    </div>  </form>
 </fieldset>
 
 <table id="resultTable">
+  <thead>
   <tr>
     <th>ID</th>
     <th>
       Player
       <button id="sortPlayer" class="sort-button">▼</button>
     </th>
-    <th>
-      Result
-    </th>
+    <th>Result</th>
     <th>
       Score
       <button id="sortScore" class="sort-button">▼</button>
     </th>
     <th>Date</th>
+    <th>Action</th> <!-- Add a new column for action buttons (delete, update, etc.)-->
   </tr>
+  </thead>
+  <tbody>
+  <!-- Table rows will be inserted here -->
+  </tbody>
 </table>
+
+<footer>
+  <p class="copyright-footer">Copyright &copy; 2023 - 2024 Team13&copy;. All rights reserved.</p>
+  <a href="https://socialmedia.com/pushfight">Join us on Social Media!</a>
+</footer>
 
 </body>
 </html>

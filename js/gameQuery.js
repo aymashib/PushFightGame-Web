@@ -1,127 +1,153 @@
 import { gamesJSON } from "./db/db.js";
 import { usersJSON } from "./db/users.js";
 
-const games = gamesJSON;
+let games = JSON.parse(localStorage.getItem('games')) || [...gamesJSON];
 const users = usersJSON;
 
-// Function to populate the player name field based on the current user
+// Function to update local storage with the modified games array
+function updateLocalStorage(games) {
+    localStorage.setItem('games', JSON.stringify(games));
+}
+
 function populatePlayerNameField() {
     const currentUser = getCurrentUser();
-    const form_player_name = document.getElementById("player_name");
+    const formPlayerName = document.getElementById("player_name");
 
     if (currentUser) {
         if (!currentUser.isAdmin) {
-            // If the user is not an admin, populate and disable the player name field with the user's name
-            form_player_name.value = currentUser.name;
-            form_player_name.disabled = true; // Disable it for non-admin users
+            formPlayerName.value = currentUser.name;
+            formPlayerName.disabled = true;
         } else {
-            form_player_name.removeAttribute("disabled"); // Enable the field for admin
+            formPlayerName.removeAttribute("disabled");
         }
     }
 }
 
-
-// Call the function to populate the player name field when the page loads
 window.onload = populatePlayerNameField;
 
 document.getElementById("queryForm").addEventListener("submit", (e) => {
     e.preventDefault();
 
-    let form_id = document.getElementById("id");
-    let form_player_name = document.getElementById("player_name");
-    let form_score = document.getElementById("score");
-    let form_score_comp = document.getElementById("scoreComparison");
-    let form_win = document.getElementById("win");
-    let form_date_before = document.getElementById("dateBefore");
-    let form_date_after = document.getElementById("dateAfter");
+    const formId = document.getElementById("id").value;
+    const formPlayerName = document.getElementById("player_name").value;
+    const formScore = document.getElementById("score").value;
+    const formScoreComp = document.getElementById("scoreComparison").value;
+    const formWin = document.getElementById("win").checked;
+    const formDateBefore = document.getElementById("dateBefore").value;
+    const formDateAfter = document.getElementById("dateAfter").value;
 
     let filteredGames = games;
-    if (form_id.value !== "") {
-        let id = parseInt(form_id.value);
+
+    if (formId !== "") {
+        const id = parseInt(formId);
         filteredGames = filteredGames.filter(game => game.id === id);
     } else {
-        // Populating player name moved to the separate function
-        populatePlayerNameField();
-
-        if(form_player_name.value !== "") {
-            // Filter users with the provided player name
-            let usersWithName = users.filter(user => user.name === form_player_name.value);
-
-            // Filter games based on whether their player name matches any of the users
+        if (formPlayerName !== "") {
+            const usersWithName = users.filter(user => user.name === formPlayerName);
             filteredGames = filteredGames.filter(game => {
                 return usersWithName.some(user => game.player_name === user.name);
             });
         }
 
-        if (form_win.checked) {
+        if (formWin) {
             filteredGames = filteredGames.filter(game => game.winner === "W");
         }
 
-        if (form_score.value !== "") {
-            let score = parseInt(form_score.value);
-
-            let compareMethod = {
-                "above": (game) => game.score > score,
-                "equal": (game) => game.score === score,
-                "below": (game) => game.score < score
-            }
-
-            filteredGames = filteredGames.filter(compareMethod[form_score_comp.value]);
+        if (formScore !== "") {
+            const score = parseInt(formScore);
+            const compareMethod = {
+                "above": game => game.score > score,
+                "equal": game => game.score === score,
+                "below": game => game.score < score
+            };
+            filteredGames = filteredGames.filter(compareMethod[formScoreComp]);
         }
 
-        if (form_date_before.value !== "") {
-            let dateBefore = new Date(form_date_before.value);
-            filteredGames = filteredGames.filter(game => (new Date(game.date)) < dateBefore);
+        if (formDateBefore !== "") {
+            const dateBefore = new Date(formDateBefore);
+            filteredGames = filteredGames.filter(game => new Date(game.date) < dateBefore);
         }
 
-        if (form_date_after.value !== "") {
-            let dateAfter = new Date(form_date_after.value);
-            filteredGames = filteredGames.filter(game => (new Date(game.date)) > dateAfter);
+        if (formDateAfter !== "") {
+            const dateAfter = new Date(formDateAfter);
+            filteredGames = filteredGames.filter(game => new Date(game.date) > dateAfter);
         }
     }
 
-    let resultTable = document.getElementById("resultTable");
-
-    // Remove existing rows from the table
-    while (resultTable.rows.length > 1) {
-        resultTable.deleteRow(1);
-    }
-
-    // Populate the table with filtered data
-    filteredGames.forEach(game => {
-        let resultRow = resultTable.insertRow(-1);
-
-        let resultId = resultRow.insertCell(0);
-        resultId.textContent = game.id;
-
-        let resultPlayer = resultRow.insertCell(1);
-        resultPlayer.textContent = game.player_name;
-
-        let resultResult = resultRow.insertCell(2);
-        resultResult.textContent = game.winner === "W" ? "WON" : "LOST";
-
-        let resultScore = resultRow.insertCell(3);
-        resultScore.textContent = game.score;
-
-        let resultDate = resultRow.insertCell(4);
-        resultDate.textContent = game.date;
-    });
+    updateResultTable(filteredGames);
 });
 
+function updateResultTable(filteredGames) {
+    const resultTable = document.getElementById("resultTable");
+    const tbody = resultTable.querySelector("tbody");
+
+    // Remove existing rows
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+
+    // Populate the table with filtered data and add delete button to each row
+    filteredGames.forEach(game => {
+        const resultRow = tbody.insertRow();
+        populateCells(resultRow, game);
+        addDeleteButton(resultRow, game, filteredGames);
+    });
+}
+
+function populateCells(row, game) {
+    // Populate cells with game data
+    const resultId = row.insertCell();
+    resultId.textContent = game.id;
+
+    const resultPlayer = row.insertCell();
+    resultPlayer.textContent = game.player_name;
+
+    const resultResult = row.insertCell();
+    resultResult.textContent = game.winner === "W" ? "WON" : "LOST";
+
+    const resultScore = row.insertCell();
+    resultScore.textContent = game.score;
+
+    const resultDate = row.insertCell();
+    resultDate.textContent = game.date;
+}
+
+function addDeleteButton(row, game, filteredGames) {
+    // Add delete button cell
+    const deleteCell = row.insertCell();
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.classList.add("delete-button");
+    deleteButton.addEventListener("click", () => {
+        // Remove the corresponding game from the games array
+        const index = filteredGames.indexOf(game);
+        if (index !== -1) {
+            filteredGames.splice(index, 1);
+            // Update local storage and the table after deleting the row
+            updateLocalStorage(filteredGames);
+            updateResultTable(filteredGames);
+        }
+    });
+    deleteCell.appendChild(deleteButton);
+}
 
 function getCurrentUser() {
-    // Retrieve the current user from local storage
     const storedUsername = window.localStorage.getItem('username');
     const storedPassword = window.localStorage.getItem('password');
 
-    // Find the user in the users array based on the stored username and password
     const currentUser = users.find(user => user.name === storedUsername && user.password === storedPassword);
 
     if (currentUser) {
-        // Check if the user is an admin
         const isAdmin = currentUser.isAdmin;
-        return { ...currentUser, isAdmin }; // Include isAdmin property in the returned object
+        return { ...currentUser, isAdmin };
     } else {
         return null;
     }
 }
+
+// Refresh button functionality
+document.getElementById("refreshButton").addEventListener("click", () => {
+    games = [...gamesJSON]; // Reset games to a copy of the original gamesJSON
+    updateLocalStorage(games); // Update local storage
+    updateResultTable(games); // Update the result table with all games
+});

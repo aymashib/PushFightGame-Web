@@ -147,3 +147,48 @@ input, select, option {
 th.sorted {
   background-color: #ddd; /* grey background for currently sorted column */
 }
+
+/* CSS for delete button */
+.delete-button {
+  background-color: rosybrown;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+/*!* CSS for highlighting sorted column header *!
+#resultTable th.sorted {
+  background-color: #ddd; !* Grey background for currently sorted column *!
+}*/
+
+#refreshButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#refreshButton img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Add vertical and horizontal spacing between the elements of the fieldset */
+fieldset div {
+  margin-bottom: 10px; /* Adjust this value to control vertical spacing */
+}
+
+fieldset div label,
+fieldset div input,
+fieldset div select,
+fieldset div button {
+  margin-right: 5px; /* Adjust this value to control horizontal spacing */
+}
+
+
+
