@@ -31,9 +31,14 @@
   max-width: 300px;
 }
 
+input{
+  border-style: solid;
+  border-color: black;
+}
 .new-contact-submit-button {
   width: 100%;
   max-width: 300px;
+  border-style: solid;
 }
 .new-contact-submit-button:hover {
   background-color: rgb(203, 4, 45);
