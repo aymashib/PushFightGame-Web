@@ -149,5 +149,5 @@ function getCurrentUser() {
 document.getElementById("refreshButton").addEventListener("click", () => {
     games = [...gamesJSON]; // Reset games to a copy of the original gamesJSON
     updateLocalStorage(games); // Update local storage
-    updateResultTable(games); // Update the result table with all games
+    // updateResultTable(games); // Don't update the result table, since the player might not be an admin and this would cause him to see all the games.
 });
