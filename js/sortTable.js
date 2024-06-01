@@ -1,18 +1,21 @@
+// Event listener for DOMContentLoaded to set up sort button event listeners
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("sortPlayer").addEventListener("click", () => {
-        sortTable(1, "sortPlayer");
+        sortTable(1, "sortPlayer"); // Sort by player name column
     });
 
     document.getElementById("sortScore").addEventListener("click", () => {
-        sortTable(3, "sortScore");
+        sortTable(3, "sortScore"); // Sort by score column
     });
 });
 
+// Object to track the current sort state
 let sortState = {
     column: null,
     ascending: true
 };
 
+// Function to sort the table by a specific column
 function sortTable(columnIndex, buttonId) {
     const table = document.getElementById("resultTable");
     const tbody = table.querySelector("tbody");
@@ -27,7 +30,7 @@ function sortTable(columnIndex, buttonId) {
         sortState.ascending = true; // Default to ascending if a new column is sorted
     }
 
-    // Update the button text content
+    // Update the button text content to show sorting direction
     const sortButtons = document.querySelectorAll(".sort-button");
     sortButtons.forEach(btn => btn.textContent = '▼');
     button.textContent = sortState.ascending ? '▲' : '▼';

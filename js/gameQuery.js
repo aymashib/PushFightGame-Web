@@ -1,6 +1,7 @@
 import { gamesJSON } from "./db/db.js";
 import { usersJSON } from "./db/users.js";
 
+// Load games from local storage or use default gamesJSON if not available
 let games = JSON.parse(localStorage.getItem('games')) || [...gamesJSON];
 const users = usersJSON;
 
@@ -9,10 +10,12 @@ function updateLocalStorage(games) {
     localStorage.setItem('games', JSON.stringify(games));
 }
 
+// Function to populate the player name field based on the current user
 function populatePlayerNameField() {
     const currentUser = getCurrentUser();
     const formPlayerName = document.getElementById("player_name");
 
+    // If there's a current user and they are not an admin, populate and disable the player name field
     if (currentUser) {
         if (!currentUser.isAdmin) {
             formPlayerName.value = currentUser.name;
@@ -23,11 +26,14 @@ function populatePlayerNameField() {
     }
 }
 
+// Call populatePlayerNameField when the window loads
 window.onload = populatePlayerNameField;
 
+// Event listener for form submission
 document.getElementById("queryForm").addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default form submission behavior
 
+    // Get form values
     const formId = document.getElementById("id").value;
     const formPlayerName = document.getElementById("player_name").value;
     const formScore = document.getElementById("score").value;
@@ -36,12 +42,15 @@ document.getElementById("queryForm").addEventListener("submit", (e) => {
     const formDateBefore = document.getElementById("dateBefore").value;
     const formDateAfter = document.getElementById("dateAfter").value;
 
+    // Initialize filteredGames with all games
     let filteredGames = games;
 
+    // Filter games by ID if specified
     if (formId !== "") {
         const id = parseInt(formId);
         filteredGames = filteredGames.filter(game => game.id === id);
     } else {
+        // Filter games by player name if specified
         if (formPlayerName !== "") {
             const usersWithName = users.filter(user => user.name === formPlayerName);
             filteredGames = filteredGames.filter(game => {
@@ -49,10 +58,12 @@ document.getElementById("queryForm").addEventListener("submit", (e) => {
             });
         }
 
+        // Filter games by win status if specified
         if (formWin) {
             filteredGames = filteredGames.filter(game => game.winner === "W");
         }
 
+        // Filter games by score if specified
         if (formScore !== "") {
             const score = parseInt(formScore);
             const compareMethod = {
@@ -63,6 +74,7 @@ document.getElementById("queryForm").addEventListener("submit", (e) => {
             filteredGames = filteredGames.filter(compareMethod[formScoreComp]);
         }
 
+        // Filter games by date if specified
         if (formDateBefore !== "") {
             const dateBefore = new Date(formDateBefore);
             filteredGames = filteredGames.filter(game => new Date(game.date) < dateBefore);
@@ -74,14 +86,16 @@ document.getElementById("queryForm").addEventListener("submit", (e) => {
         }
     }
 
+    // Update the result table with the filtered games
     updateResultTable(filteredGames);
 });
 
+// Function to update the result table with filtered games
 function updateResultTable(filteredGames) {
     const resultTable = document.getElementById("resultTable");
     const tbody = resultTable.querySelector("tbody");
 
-    // Remove existing rows
+    // Remove existing rows in the table
     while (tbody.firstChild) {
         tbody.removeChild(tbody.firstChild);
     }
@@ -94,8 +108,8 @@ function updateResultTable(filteredGames) {
     });
 }
 
+// Function to populate table cells with game data
 function populateCells(row, game) {
-    // Populate cells with game data
     const resultId = row.insertCell();
     resultId.textContent = game.id;
 
@@ -112,12 +126,14 @@ function populateCells(row, game) {
     resultDate.textContent = game.date;
 }
 
+// Function to add a delete button to each row
 function addDeleteButton(row, game, filteredGames) {
-    // Add delete button cell
     const deleteCell = row.insertCell();
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.classList.add("delete-button");
+
+    // Event listener for the delete button
     deleteButton.addEventListener("click", () => {
         // Remove the corresponding game from the games array
         const index = filteredGames.indexOf(game);
@@ -131,10 +147,12 @@ function addDeleteButton(row, game, filteredGames) {
     deleteCell.appendChild(deleteButton);
 }
 
+// Function to get the current user from local storage
 function getCurrentUser() {
     const storedUsername = window.localStorage.getItem('username');
     const storedPassword = window.localStorage.getItem('password');
 
+    // Find the user in the users array that matches the stored username and password
     const currentUser = users.find(user => user.name === storedUsername && user.password === storedPassword);
 
     if (currentUser) {
@@ -149,5 +167,5 @@ function getCurrentUser() {
 document.getElementById("refreshButton").addEventListener("click", () => {
     games = [...gamesJSON]; // Reset games to a copy of the original gamesJSON
     updateLocalStorage(games); // Update local storage
-    updateResultTable(games); // Update the result table with all games
+    // Note: Not updating the result table to avoid showing all games to non-admin users
 });

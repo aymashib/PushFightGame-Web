@@ -1,12 +1,15 @@
 .title-team-element {
     text-align: center;
     margin-bottom: 30px;
+    font-size: xx-large;
+    border-radius: 10px;
 }
 
 .team-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    border-radius: 10px;
 }
 
 .team-member {
@@ -15,6 +18,7 @@
     padding: 20px;
     text-align: center;
     border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 @media screen and (max-width: 768px) {
