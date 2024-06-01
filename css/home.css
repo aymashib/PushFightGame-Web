@@ -1,10 +1,21 @@
+h2{
+    margin-bottom: 10px;
+}
+p{
+    padding: 0 0 15px;
+}
+
+video {
+    width: 100%;
+}
+section:last-child{
+    margin-bottom: 15px;
+}
+
 .screenshot-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-video {
-    width: 100%;
 }
 
 .screenshot-container img {
@@ -12,23 +23,7 @@ video {
     margin: 5px; /* Add margin between images */
 }
 
-@media screen and (max-width: 760px) {
-    .screenshot-container img,
-    logo-container-center img{
-        width: 100%;
-        max-width: none;
-        height: auto;
-    }
-    .logo-container-center{
-        height: 50%;
-    }
-}
-
-.logo-container-center {
-    text-align: center; /* Center the logo */
-}
-
-.logo-container-center img {
+div img {
     max-width: 100%; /* Make sure the logo doesn't exceed its container's width */
 }
 
@@ -36,8 +31,10 @@ nav a:nth-child(1) {
     border: solid;
 }
 
-
-
-
-
-
+@media screen and (max-width: 760px) {
+    .screenshot-container img{
+        width: 100%;
+        max-width: none;
+        height: auto;
+    }
+}

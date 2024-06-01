@@ -5,6 +5,15 @@ main p{
   text-align: left;
 }
 
-article{
-  border-radius: 10px;
+p {
+  margin: 0 0 1em;
+  padding: 0;
+  line-height: 1.6;
+  display: block;
+}
+
+p strong {
+  display: block;
+  margin: 1em 0 10px; /* Adds space above each strong element */
+  font-size: 18px;
 }

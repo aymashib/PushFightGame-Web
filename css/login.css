@@ -2,6 +2,9 @@ main div{
     display: flex;
     margin: 14px;
 }
+h1{
+    margin-bottom: 10px;
+}
 main div label{
     margin: 0 20px;
 }
@@ -21,7 +24,6 @@ form input{
     border-style: none;
     border-radius: 10px;
     transition: 0.5s;
-
 }
 
 form input:hover{

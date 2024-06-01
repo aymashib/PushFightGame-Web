@@ -10,22 +10,23 @@ section img {
 
 article {
   text-align: center;
-  margin-right: 15px;
-  margin-left: 15px;
+  margin: 0 15px;
+  padding: 10px;
   border-radius: 10px;
 }
+
 h2{
   border-radius: 10px;
 }
 
 p{
-  margin-top: 6px;
+  margin-top: 10px;
   font-size: large;
   font-weight: bolder;
 }
 
 main{
-  margin-bottom: 160px;
+  margin-bottom: 140px;
 }
 
 nav a:nth-child(6) {
