@@ -16,7 +16,9 @@
 
 <header>
   <div class="container">
-    <marquee>Join our community and get the game for FREE!</marquee>
+    <div class="marquee">
+      <p>Join the Push Fight Community and Play Now - FREE!</p>
+    </div>
     <h1>Push Fight</h1>
     <span id="welcomeMessage"></span>
     <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
@@ -35,68 +37,70 @@
   </div>
 </header>
 
-<fieldset>
-  <form id="queryForm">
-    <div>
-      <label for="id">ID</label>
-      <input type="number" id="id" name="id">
-    </div>
-    <div>
-      <label for="player_name">Player name</label>
-      <input type="text" id="player_name" name="player_name">
-    </div>
-    <div>
-      <label for="score">Score</label>
-      <input type="number" id="score" name="score">
-      <label for="scoreComparison">Comparison:</label>
-      <select id="scoreComparison" name="scoreComparison">
-        <option value="above">Above</option>
-        <option value="equal">Equal</option>
-        <option value="below">Below</option>
-      </select>
-    </div>
-    <div>
-      <label for="win">Win</label>
-      <input type="checkbox" id="win" name="win">
-    </div>
-    <div>
-      <label for="dateBefore">Before</label>
-      <input type="date" id="dateBefore" name="dateBefore">
-      <label for="dateAfter">After</label>
-      <input type="date" id="dateAfter" name="dateAfter">
-    </div>
-    <div class="buttons-container">
-      <input type="submit" id="search" value="Search">
-      <button type="button" id="refreshButton">
-        <img src="../media/refresh-icon-pushfight.png" alt="Refresh">
-      </button>
-    </div>  </form>
-</fieldset>
+<main>
+  <fieldset>
+    <form id="queryForm">
+      <div>
+        <label for="id">ID</label>
+        <input type="number" id="id" name="id">
+      </div>
+      <div>
+        <label for="player_name">Player name</label>
+        <input type="text" id="player_name" name="player_name">
+      </div>
+      <div>
+        <label for="score">Score</label>
+        <input type="number" id="score" name="score">
+        <label for="scoreComparison">Comparison:</label>
+        <select id="scoreComparison" name="scoreComparison">
+          <option value="above">Above</option>
+          <option value="equal">Equal</option>
+          <option value="below">Below</option>
+        </select>
+      </div>
+      <div>
+        <label for="win">Win</label>
+        <input type="checkbox" id="win" name="win">
+      </div>
+      <div>
+        <label for="dateBefore">Before</label>
+        <input type="date" id="dateBefore" name="dateBefore">
+        <label for="dateAfter">After</label>
+        <input type="date" id="dateAfter" name="dateAfter">
+      </div>
+      <div class="buttons-container">
+        <input type="submit" id="search" value="Search">
+        <button type="button" id="refreshButton">
+          <img src="../media/refresh-icon-pushfight.png" alt="Refresh">
+        </button>
+      </div>  </form>
+  </fieldset>
 
-<table id="resultTable">
-  <thead>
-  <tr>
-    <th>ID</th>
-    <th>
-      Player
-      <button id="sortPlayer" class="sort-button">▼</button>
-    </th>
-    <th>Result</th>
-    <th>
-      Score
-      <button id="sortScore" class="sort-button">▼</button>
-    </th>
-    <th>Date</th>
-    <th>Action</th> <!-- Add a new column for action buttons (delete, update, etc.)-->
-  </tr>
-  </thead>
-  <tbody>
-  <!-- Table rows will be inserted here -->
-  </tbody>
-</table>
+  <table id="resultTable">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>
+        Player
+        <button id="sortPlayer" class="sort-button">▼</button>
+      </th>
+      <th>Result</th>
+      <th>
+        Score
+        <button id="sortScore" class="sort-button">▼</button>
+      </th>
+      <th>Date</th>
+      <th>Action</th> <!-- Add a new column for action buttons (delete, update, etc.)-->
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Table rows will be inserted here -->
+    </tbody>
+  </table>
+</main>
 
 <footer>
-  <p class="copyright-footer">Copyright &copy; 2023 - 2024 Team13&copy;. All rights reserved.</p>
+  <p>Copyright &copy; 2023 - 2024 Team13&copy;. All rights reserved.</p>
   <a href="https://socialmedia.com/pushfight">Join us on Social Media!</a>
 </footer>
 

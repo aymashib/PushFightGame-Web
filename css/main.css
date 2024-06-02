@@ -8,12 +8,12 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-}
+/*a {*/
+/*  text-decoration: none;*/
+/*}*/
 
 main {
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 10px;
@@ -41,10 +41,10 @@ body {
 
 section {
   padding: 5px;
-  margin: 15px;
+  margin: 20px 0 40px;
   border-radius: 10px;
   background-color: white;
-  margin-bottom: 50px;
+  /*margin-bottom: 50px;*/
 }
 
 header h1 {
@@ -52,10 +52,6 @@ header h1 {
   justify-content: center;
 }
 
-header marquee {
-  width: 100%;
-  animation: flash 2s infinite;
-}
 
 nav {
   display: flex;
@@ -73,6 +69,39 @@ nav a:hover {
   display: none;
 }
 
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.marquee p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite, flash 1s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes flash {
+  0% {
+    color: red;
+  }
+  50% {
+    color: blue;
+  }
+  100% {
+    color: red;
+  }
+}
 
 /*interactive nav*/
 @media screen and (max-width: 880px) {
@@ -100,38 +129,16 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     text-align: center;
-    /*position: fixed;*/
     width: 100%;
     background-color: white;
     padding-bottom: 10px;
     transition: all 0.3s ease;
   }
-  /*#menu-toggle:checked + label + nav a {*/
-  /*  margin: 5px 0;*/
-  /*  display: inline-flex;*/
-  /*}*/
-
-  /*section:nth-child(1) {*/
-  /*  display: flex;*/
-  /*  flex-direction: column;*/
-  /*  text-align: center;*/
-  /*}*/
 }
 
 /*interactive nav*/
 
 /*footer*/
-@keyframes flash {
-  0% {
-    color: red;
-  }
-  50% {
-    color: blue;
-  }
-  100% {
-    color: red;
-  }
-}
 
 h1:hover {
   color: rgb(203, 4, 45);
@@ -151,4 +158,7 @@ footer p {
   font-size: 12px;
   animation: flash 2s infinite;
   bottom: 0;
+}
+footer a{
+  text-decoration: none;
 }
