@@ -17,3 +17,7 @@ p strong {
   margin: 1em 0 10px; /* Adds space above each strong element */
   font-size: 18px;
 }
+header{
+  padding: 10px 0;
+
+}
