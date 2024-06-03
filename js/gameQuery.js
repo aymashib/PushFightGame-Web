@@ -135,15 +135,23 @@ function addDeleteButton(row, game, filteredGames) {
 
     // Event listener for the delete button
     deleteButton.addEventListener("click", () => {
-        // Remove the corresponding game from the games array
-        const index = filteredGames.indexOf(game);
-        if (index !== -1) {
-            filteredGames.splice(index, 1);
-            // Update local storage and the table after deleting the row
-            updateLocalStorage(filteredGames);
-            updateResultTable(filteredGames);
+        // Remove the corresponding game from the filteredGames array
+        const indexFiltered = filteredGames.indexOf(game);
+        if (indexFiltered !== -1) {
+            filteredGames.splice(indexFiltered, 1);
         }
+
+        // Remove the corresponding game from the main games array
+        const indexGames = games.indexOf(game);
+        if (indexGames !== -1) {
+            games.splice(indexGames, 1);
+        }
+
+        // Update local storage and the table after deleting the row
+        updateLocalStorage(games);
+        updateResultTable(filteredGames);
     });
+
     deleteCell.appendChild(deleteButton);
 }
 

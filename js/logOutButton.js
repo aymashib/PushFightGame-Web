@@ -35,12 +35,12 @@ function updateLeaderBoardBtn(){
 }
 updateLeaderBoardBtn();
 
-function updateFormBtn(){
-    const formButton = document.getElementById("Formbtn");
+function updateformBtn(){
+    const formButton = document.getElementById("formBtn");
 
     if (window.localStorage.getItem('loggedIn')){
         formButton.style.display = 'block';
     } else formButton.style.display = 'none';
 
 }
-updateFormBtn();
+updateformBtn();
